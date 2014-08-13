@@ -7,12 +7,12 @@ Still in early development.
 
 Developers
 ==========
+ljyloo
+
 Marcus
 
 MagicDriodX
 
 kdgwhsk
-
-ljyloo
 
 Steven
