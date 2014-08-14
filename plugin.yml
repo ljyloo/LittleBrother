@@ -3,8 +3,9 @@ version: 1.0.0.000.0
 author: Pyramid
 main: com.Pyramid.LittleBrother.LittleBrother
 commands:
-   basic:
+   LittleBrother:
       description: Commands of LittleBrother.
-      usage: /lb
+      usage: /lb for some help
+      aliases:[lb]
       permission: LittleBrother.lb
       permission-message: You don't have <permission>
