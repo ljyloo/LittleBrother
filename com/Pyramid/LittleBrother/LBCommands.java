@@ -13,8 +13,14 @@ public class LBCommands implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("lb")) { 
-			sender.sendMessage("This is LittleBrother Commands list:");
-			return true;
+			if (args.length == 0){
+				sender.sendMessage("&f/lb version&7 - &3Shows plugin version");
+				return true;
+			} else if ((args.length == 1) && args[0].equalsIgnoreCase("version")) {
+				// version
+				sender.sendMessage(plugin.getDescription().getName() + " " + plugin.getDescription().getVersion());
+				return true;
+			}
 		}
 		return false;
 	}
