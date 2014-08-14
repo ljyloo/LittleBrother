@@ -9,7 +9,7 @@ public class LittleBrother extends JavaPlugin{
 	public void onEnable(){
 		this.thread = new serverThread(getLogger());
 		getLogger().info("LittleBrother插件已被加载！");
-		this.getCommand("lb").setExecutor(new LBCommands(this));
+		this.getCommand("LittleBrother").setExecutor(new LBCommands(this));
 	}
 	
 	@Override
