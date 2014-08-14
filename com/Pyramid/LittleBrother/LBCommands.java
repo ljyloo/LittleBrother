@@ -12,7 +12,7 @@ public class LBCommands implements CommandExecutor {
  
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("lb")) { 
+		if (cmd.getName().equalsIgnoreCase("LittleBrother")) { 
 			if (args.length == 0){
 				sender.sendMessage("&f/lb version&7 - &3Shows plugin version");
 				return true;
