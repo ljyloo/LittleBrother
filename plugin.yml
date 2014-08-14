@@ -1,5 +1,5 @@
 name: LittleBrother
-version: 1.0
+version: 1.0.0.000.0
 author: Pyramid
 main: com.Pyramid.LittleBrother.LittleBrother
 commands:
