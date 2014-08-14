@@ -1,8 +1,6 @@
 package com.Pyramid.LittleBrother;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 
 public class LittleBrother extends JavaPlugin{
 	private serverThread thread;
