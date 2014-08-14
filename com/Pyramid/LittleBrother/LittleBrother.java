@@ -18,13 +18,4 @@ public class LittleBrother extends JavaPlugin{
     	public void onDisable() {
         	getLogger().info("LittleBrother插件已被卸载！");
     	}
-    	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("lb")) { // If the player typed /basic then do the following...
-			// doSomething
-			return true;
-		} //If this has happened the function will return true. 
-        // If this hasn't happened the value of false will be returned.
-		return false; 
-	}
 }
