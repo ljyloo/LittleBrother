@@ -7,4 +7,3 @@ public class LittleBrother extends JavaPlugin{
 		getLogger().info("LittleBrother插件已被加载！");
 	}
 }
-//TODO
