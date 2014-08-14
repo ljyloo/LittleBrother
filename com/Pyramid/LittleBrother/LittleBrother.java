@@ -1,4 +1,4 @@
-package com.ljyloo.LittleBrother;
+package com.Pyramid.LittleBrother;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
