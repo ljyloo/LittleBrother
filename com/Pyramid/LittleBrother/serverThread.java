@@ -12,6 +12,6 @@ public class serverThread extends Thread{
 	}
 	
 	public void run(){
-		this.server = new server(this.logger, 19132, "test");
+		this.server = new server(this.logger, 19132, "MCPE Server By LittleBrother");
 	}
 }
