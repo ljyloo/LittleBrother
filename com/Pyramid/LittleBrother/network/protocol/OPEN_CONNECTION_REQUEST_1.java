@@ -11,7 +11,7 @@ class UNCONNECTED_PONG extends Packet{
 
         public void encode(){
             super.encode();
-            this.put(Binary.getMAGIC());
+            this.put(Binary.MAGIC;
             this.putByte(this.protocol);
             char str = (char)0x00;
             String fstr;
