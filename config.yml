@@ -1,6 +1,2 @@
-# default config.yml
-message: Hello World and Welcome! :)
-rules:
-  - Play Nice
-  - Respect others
-  - Have Fun
+port: 19132
+motd: MCPE Server By LittleBrother
