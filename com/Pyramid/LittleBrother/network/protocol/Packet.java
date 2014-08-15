@@ -11,6 +11,10 @@ abstract class Packet{
 	public ArrayList<Byte> buffer = new ArrayList<Byte>();
 	public int sendTime;
 	
+	protected int getLen(){
+		return this.buffer.size();
+	}
+	
 	protected byte[] get(int len){
 		if(len < 0){
 			this.offset = this.buffer.size() - 1;
