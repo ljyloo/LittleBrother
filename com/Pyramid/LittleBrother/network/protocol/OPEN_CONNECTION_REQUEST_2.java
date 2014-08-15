@@ -4,26 +4,28 @@ import com.Pyramid.LittleBrother.network.Binary;
 
 class OPEN_CONNECTION_REQUEST_2 extends Packet{
 	public byte ID = 0x07;
+	//0x043f57fefd
+	public byte[] SC = {(byte)0x04, (byte)0x3f, (byte)0x57, (byte)0xfe, (byte)0xfd};
 	
-	public int clientID;
-	public int serverPort;
-	public int mtuSize;
+	public long clientID;
+	public short serverPort;
+	public short mtuSize;
 	
 	public void encode(){
 		super.encode();
 		this.put(Binary.MAGIC);
-		this.putByte((byte)0); //client security (5 bytes?)
-		this.putShort(this.serverPort);
-		this.putShort(this.mtuSize);
-		this.putLong(this.clientID);
+		this.put(this.SC); //client security (5 bytes?)
+		this.putShort(serverPort);
+		this.putShort(mtuSize);
+		this.putLong(clientID);
 	}
-
+	
 	public void decode(){
 		super.decode();
 		this.offset += 16; //Magic
-		this.getByte((byte)5); //Client security
-		this.serverPort = this.getShort(false);
-		this.mtuSize = this.getShort(false);
+		this.get(5); //Client security
+		this.serverPort = this.getShort();
+		this.mtuSize = this.getShort();
 		this.clientID = this.getLong();
 	}
 }
