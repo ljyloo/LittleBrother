@@ -1,11 +1,11 @@
 name: LittleBrother
-version: 1.0.0.000.0
+version: 1.0-alpha
 author: Pyramid
 main: com.Pyramid.LittleBrother.LittleBrother
 commands:
    LittleBrother:
-      description: Commands of LittleBrother.
-      usage: /lb for some help
-      aliases:[lb]
+      description: LittleBrother的指令.
+      usage: /LittleBrother 获得更多帮助
+      aliases: [lb]
       permission: LittleBrother.lb
-      permission-message: You don't have <permission>
+      permission-message: 你没有 <permission> 的权限
