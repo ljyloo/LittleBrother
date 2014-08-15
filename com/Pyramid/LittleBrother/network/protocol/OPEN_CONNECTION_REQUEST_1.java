@@ -6,7 +6,7 @@ class OPEN_CONNECTION_REQUEST_1 extends Packet{
 	public byte ID = 0x05;
 	
 	public byte protocol = Binary.PROTOCOL;
-	public int mtuSize;
+	public short mtuSize;
 	
 	public void encode(){
 		super.encode();
@@ -19,6 +19,6 @@ class OPEN_CONNECTION_REQUEST_1 extends Packet{
 		super.decode();
 		this.offset += 16; //Magic
 		this.protocol = this.getByte();
-		this.mtuSize = this.getLen();
+		this.mtuSize = (short) this.getLen();
 	}
 }
