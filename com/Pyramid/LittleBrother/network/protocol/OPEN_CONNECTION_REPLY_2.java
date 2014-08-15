@@ -17,7 +17,7 @@ class OPEN_CONNECTION_REPLY_2 extends Packet{
 		this.putLong(serverID);
 		this.putShote(clientPort);
 		this.putShort(mtuSize);
-		this.put(this.SC); //server security
+		this.put(Binary.SC); //server security
 	}
 	
 	public void decode(){
