@@ -15,7 +15,7 @@ class UNCONNECTED_PONG extends Packet{
             this.putByte(this.protocol);
             char str = (char)0x00;
             String fstr;
-            for(i = 1;i <= $this.mtuSize - 18;i++){
+            for(i = 1;i <= this.mtuSize - 18;i++){
               fstr += str;
             }
             this.put(sfstr);
