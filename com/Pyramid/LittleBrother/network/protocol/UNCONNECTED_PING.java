@@ -10,7 +10,7 @@ class UNCONNECTED_PING extends Packet{
 	public void encode(){
 		super.encode();
 		this.putLong(pingID);
-		this.put(Binary.getMAGIC());
+		this.put(Binary.MAGIC);
 	}
 	
 	public void decode(){
