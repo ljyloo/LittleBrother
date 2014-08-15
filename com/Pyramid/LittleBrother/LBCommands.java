@@ -1,6 +1,7 @@
 package com.Pyramid.LittleBrother;
 
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 public class LBCommands implements CommandExecutor {
@@ -10,7 +11,6 @@ public class LBCommands implements CommandExecutor {
 		this.plugin = plugin; // Store the plugin in situations where you need it.
 	}
  
-	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("LittleBrother")) { 
 			if (args.length == 0){
