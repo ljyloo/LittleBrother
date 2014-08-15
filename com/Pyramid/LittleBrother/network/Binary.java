@@ -4,12 +4,7 @@ import java.nio.charset.Charset;
 
 public class Binary{
 	public static byte PROTOCOL = 0x05;
-	
-	public static byte[] getMAGIC(){
-		//0x00ffff00fefefefefdfdfdfd12345678
-		byte[] magic = {(byte)0x00, (byte)0xff, (byte)0xff, (byte)0x00, (byte)0xfe, (byte)0xfe, (byte)0xfe, (byte)0xfe, (byte)0xfd, (byte)0xfd, (byte)0xfd, (byte)0xfd, (byte)0x12, (byte)0x34, (byte)0x56, (byte)0x78};
-		return magic;
-	}
+	public static byte[] MAGIC = {(byte)0x00, (byte)0xff, (byte)0xff, (byte)0x00, (byte)0xfe, (byte)0xfe, (byte)0xfe, (byte)0xfe, (byte)0xfd, (byte)0xfd, (byte)0xfd, (byte)0xfd, (byte)0x12, (byte)0x34, (byte)0x56, (byte)0x78};
 	
 	public static byte[] getBytes(short data){
 		byte[] bytes = new byte[2];
