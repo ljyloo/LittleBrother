@@ -24,8 +24,8 @@ class OPEN_CONNECTION_REPLY_2 extends Packet{
 		super.decode();
 		this.offset += 16; //Magic
 		this.serverID = this.getLong();
-		this.clientPort = this.getShort(false);
-		this.mtuSize = this.getShort(false);
-		//serer security
+		this.clientPort = this.getShort();
+		this.mtuSize = this.getShort();
+		//server security
 	}
 }
