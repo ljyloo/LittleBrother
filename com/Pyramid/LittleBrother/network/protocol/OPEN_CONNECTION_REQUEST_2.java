@@ -5,7 +5,7 @@ import com.Pyramid.LittleBrother.network.Binary;
 class OPEN_CONNECTION_REQUEST_2 extends Packet{
 	public byte ID = 0x07;
 	//0x043f57fefd
-	public byte[] SC = {(byte)0x04, (byte)0x3f, (byte)0x57, (byte)0xfe, (byte)0xfd};
+	public static byte[] SC = {(byte)0x04, (byte)0x3f, (byte)0x57, (byte)0xfe, (byte)0xfd};
 	
 	public long clientID;
 	public short serverPort;
@@ -14,7 +14,7 @@ class OPEN_CONNECTION_REQUEST_2 extends Packet{
 	public void encode(){
 		super.encode();
 		this.put(Binary.MAGIC);
-		this.put(this.SC); //client security (5 bytes?)
+		this.put(OPEN_CONNECTION_REQUEST_2.SC); //client security (5 bytes?)
 		this.putShort(serverPort);
 		this.putShort(mtuSize);
 		this.putLong(clientID);
