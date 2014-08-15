@@ -1,4 +1,4 @@
-package com.Pyramid.LittleBrother;
+package com.Pyramid.LittleBrother.Network.Server.Server;
 
 import java.util.logging.Logger;
 
