@@ -14,7 +14,7 @@ class OPEN_CONNECTION_REQUEST_2 extends Packet{
 	public void encode(){
 		super.encode();
 		this.put(Binary.MAGIC);
-		this.put(OPEN_CONNECTION_REQUEST_2.SC); //client security (5 bytes?)
+		this.put(Binary.SC); //client security (5 bytes?)
 		this.putShort(serverPort);
 		this.putShort(mtuSize);
 		this.putLong(clientID);
