@@ -2,6 +2,11 @@ name: LittleBrother
 version: 1.0-alpha
 author: Pyramid
 main: com.Pyramid.LittleBrother.LittleBrother
+
+permissions:
+  LittleBrother.lb:
+    default: op
+
 commands:
    LittleBrother:
       description: Commands of LittleBrother.
