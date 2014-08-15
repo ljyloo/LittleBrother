@@ -5,8 +5,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class LittleBrother extends JavaPlugin{
 	private ServerThread thread;
 	static ConfigAccessor config;
-	static String Motd;
-	static int port;
+	String Motd;
+	int port;
+	
+	public void onload(){
+		saveDefaultConfig();
+	}
 	
 	@Override
 	public void onEnable(){
