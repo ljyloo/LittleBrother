@@ -32,7 +32,7 @@ public class LBCommands implements CommandExecutor {
 				sender.sendMessage("§c当前PE服务器名称：" + Motd);
 				sender.sendMessage("§c当前PE服务器端口：" + port);
 				return true;
-			} else if ((args.length == 1) && args[0].equalsIgnoreCase("version")) {
+			} else if ((args.length == 1) && args[0].equalsIgnoreCase("reload")) {
 				sender.sendMessage("§c正在重载配置文件！");
 				config.reloadConfig();
 				sender.sendMessage("§c重载配置文件完成！");
