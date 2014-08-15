@@ -15,11 +15,11 @@ public class LBCommands implements CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("LittleBrother")) { 
 			if (args.length == 0){
 				sender.sendMessage("§a--- 本指令等同于/lb ---");
-				sender.sendMessage("§a/LittleBrother version&7 - §3显示当前版本.");
+				sender.sendMessage("§a/LittleBrother version - §7显示当前版本.");
 				return true;
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("version")) {
 				// version
-				sender.sendMessage(plugin.getDescription().getName() + " " + plugin.getDescription().getVersion());
+				sender.sendMessage(plugin.getDescription().getName() + " §7" + plugin.getDescription().getVersion());
 				return true;
 			}
 		}
