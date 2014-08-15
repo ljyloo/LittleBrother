@@ -4,8 +4,8 @@ author: Pyramid
 main: com.Pyramid.LittleBrother.LittleBrother
 commands:
    LittleBrother:
-      description: LittleBrother的指令.
-      usage: /LittleBrother 获得更多帮助
+      description: Commands of LittleBrother.
+      usage: /lb for some help
       aliases: [lb]
       permission: LittleBrother.lb
-      permission-message: 你没有 <permission> 的权限
+      permission-message: You don't have <permission>
