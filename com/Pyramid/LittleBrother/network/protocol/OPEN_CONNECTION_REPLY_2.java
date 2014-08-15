@@ -13,7 +13,7 @@ class OPEN_CONNECTION_REPLY_2 extends Packet{
 		super.encode();
 		this.put(Binary.MAGIC);
 		this.putLong(serverID);
-		this.putShote(clientPort);
+		this.putShort(clientPort);
 		this.putShort(mtuSize);
 		this.put(Binary.SC); //server security
 	}
