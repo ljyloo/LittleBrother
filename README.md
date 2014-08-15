@@ -15,6 +15,6 @@ kdgwhsk
 
 Steven
 
-Usage&TrobleShootting
+Usage&TroubleShootting
 =====================
 See LittleBrother Wiki.
