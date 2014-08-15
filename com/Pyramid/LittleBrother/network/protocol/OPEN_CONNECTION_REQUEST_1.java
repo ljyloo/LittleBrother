@@ -6,7 +6,7 @@ class UNCONNECTED_PONG extends Packet{
 
         public byte ID = 0x05;
 
-        public byte protocol;
+        public byte protocol = 5;
         public mtuSize;
 
         public void encode(){
