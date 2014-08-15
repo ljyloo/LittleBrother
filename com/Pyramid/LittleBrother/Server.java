@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 public class Server {
 	private Logger logger;
 	private int port;
-	private static String motd;
+	private String motd;
 	
 	public Server(Logger logger, int port, String motd){
 		this.logger = logger;
@@ -13,7 +13,7 @@ public class Server {
 		this.motd = motd;
 	}
 	
-	public static String getMotd(){
+	public String getMotd(){
 		return motd;
 	}
 }
