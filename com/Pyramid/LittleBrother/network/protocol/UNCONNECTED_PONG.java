@@ -13,7 +13,7 @@ class UNCONNECTED_PONG extends Packet{
 		super.encode();
 		this.putLong(pingID);
 		this.putLong(serverID);
-		this.put(Binary.getMAGIC());
+		this.put(Binary.MAGIC);
 		this.putString(serverName);
 	}
 	
