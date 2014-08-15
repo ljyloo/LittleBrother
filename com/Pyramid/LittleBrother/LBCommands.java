@@ -12,6 +12,8 @@ public class LBCommands implements CommandExecutor {
  
 	public LBCommands(LittleBrother plugin) {
 		this.plugin = plugin; // Store the plugin in situations where you need it.
+		Motd = this.plugin.Motd;
+		port = this.plugin.port;
 	}
  
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -27,8 +29,8 @@ public class LBCommands implements CommandExecutor {
 				sender.sendMessage("§c["+plugin.getDescription().getName() + "-Version] §3" + plugin.getDescription().getVersion());
 				return true;
 			}else if ((args.length == 1) && args[0].equalsIgnoreCase("status")) {
-				Motd = LittleBrother.Motd;
-				port = LittleBrother.port;
+				//Motd = LittleBrother.Motd;
+				//port = LittleBrother.port;
 				sender.sendMessage("§c当前PE服务器名称：" + Motd);
 				sender.sendMessage("§c当前PE服务器端口：" + port);
 				return true;
