@@ -36,7 +36,8 @@ public class LBCommands implements CommandExecutor {
 				return true;
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("reload")) {
 				sender.sendMessage("§c正在重载配置文件！");
-				config.reloadConfig();
+				//config.reloadConfig();
+				//plugin.reloadConfig();
 				sender.sendMessage("§c重载配置文件完成！");
 				return true;
 			}
