@@ -1,12 +1,10 @@
 package com.Pyramid.LittleBrother;
 
-import java.util.List;
-
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class LittleBrother extends JavaPlugin{
 	private ServerThread thread;
-	private ConfigAccessor config;
+	static ConfigAccessor config;
 	static String Motd;
 	static int port;
 	
