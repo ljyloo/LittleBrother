@@ -3,7 +3,7 @@ package com.Pyramid.LittleBrother;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class LittleBrother extends JavaPlugin{
-	private serverThread thread;
+	private ServerThread thread;
 	
 	@Override
 	public void onEnable(){
