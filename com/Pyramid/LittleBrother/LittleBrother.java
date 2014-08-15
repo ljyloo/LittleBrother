@@ -4,10 +4,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class LittleBrother extends JavaPlugin{
 	private ServerThread thread;
+	private ConfigAccessor config;
 	
 	@Override
 	public void onEnable(){
 		this.thread = new ServerThread(getLogger());
+		//this.saveDefaultConfig();
+		this.config = new ConfigAccessor(this,"config.yml");
+		this.config.saveDefaultConfig();
 		getLogger().info("LittleBrother插件已被加载！");
 		this.getCommand("LittleBrother").setExecutor(new LBCommands(this));
 	}
