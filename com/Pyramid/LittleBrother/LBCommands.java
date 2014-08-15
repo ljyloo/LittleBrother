@@ -14,7 +14,8 @@ public class LBCommands implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("LittleBrother")) { 
 			if (args.length == 0){
-				sender.sendMessage("&f/lb version&7 - &3Shows plugin version");
+				sender.sendMessage("§a--- 本指令等同于/lb ---");
+				sender.sendMessage("§a/LittleBrother version&7 - §3显示当前版本.");
 				return true;
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("version")) {
 				// version
