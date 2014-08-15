@@ -23,7 +23,8 @@ public class LBCommands implements CommandExecutor {
 				sender.sendMessage("§c["+plugin.getDescription().getName() + "-Version] §3" + plugin.getDescription().getVersion());
 				return true;
 			}else if ((args.length == 1) && args[0].equalsIgnoreCase("status")) {
-				sender.sendMessage("§c当前PE服务器名称："+Server.getMotd());
+				sender.sendMessage("§c当前PE服务器名称：");
+				return true;
 			}
 		}
 		return false;
