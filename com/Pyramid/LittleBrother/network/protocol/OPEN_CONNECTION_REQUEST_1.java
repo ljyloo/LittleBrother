@@ -2,29 +2,23 @@ package com.Pyramid.LittleBrother.network.protocol;
 
 import com.Pyramid.LittleBrother.network.Binary;
 
-class UNCONNECTED_PONG extends Packet{
-
-        public byte ID = 0x05;
-
-        public byte protocol;
-        public mtuSize;
-
-        public void encode(){
-            super.encode();
-            this.put(Binary.getMAGIC());
-            this.putByte(this.protocol);
-            char str = (char)0x00;
-            String fstr;
-            for(i = 1;i <= $this.mtuSize - 18;i++){
-              fstr += str;
-            }
-            this.put(sfstr);
-        }
-        public void decode(){
-            super.decode();
-            this.offset += 16; //magic
-            this.protocol = this.getByte();
-            int n = this.get(true);
-            this.mtuSize = n.length() + 18
-        }
+class OPEN_CONNECTION_REQUEST_1 extends Packet{
+	public byte ID = 0x05;
+	
+	public byte protocol = Binary.PROTOCOL;
+	public int mtuSize;
+	
+	public void encode(){
+		super.encode();
+		this.put(Binary.MAGIC);
+		this.putByte(protocol);
+		this.put(Binary.getNullPayload(this.mtuSize - 18));
+	}
+	
+	public void decode(){
+		super.decode();
+		this.offset += 16;
+		this.protocol = this.getByte();
+		this.mtuSize = this.getLen();
+	}
 }
