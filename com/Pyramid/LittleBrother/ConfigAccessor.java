@@ -10,7 +10,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class ConfigAccessor {
+public class ConfigAccessor{
  
     private final String fileName;
     private final JavaPlugin plugin;
@@ -30,9 +30,10 @@ public class ConfigAccessor {
     }
  
     public void reloadConfig() {        
-        fileConfiguration = YamlConfiguration.loadConfiguration(configFile);
- 
-        // Look for defaults in the jar
+        //plugin.reloadConfig();
+    	fileConfiguration = YamlConfiguration.loadConfiguration(configFile);
+    	//super.reloadConfig();
+        //Look for defaults in the jar
         InputStream defConfigStream = plugin.getResource(fileName);
         if (defConfigStream != null) {
             YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(new InputStreamReader(defConfigStream));
