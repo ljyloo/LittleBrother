@@ -1,37 +1,30 @@
 package com.Pyramid.LittleBrother;
 
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
+import java.util.List;
 
-public class LBCommands implements CommandExecutor {
-	private final LittleBrother plugin;
-	private String Motd;
-	private int port;
- 
-	public LBCommands(LittleBrother plugin) {
-		this.plugin = plugin; // Store the plugin in situations where you need it.
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class LittleBrother extends JavaPlugin{
+	private ServerThread thread;
+	private ConfigAccessor config;
+	static String Motd;
+	static int port;
+	
+	@Override
+	public void onEnable(){
+		this.thread = new ServerThread(getLogger());
+		this.config = new ConfigAccessor(this,"config.yml");
+		this.config.saveDefaultConfig();
+		getLogger().info("LittleBrother插件已被加载！");
+		this.getCommand("LittleBrother").setExecutor(new LBCommands(this));
+		Motd = this.getConfig().getString("motd");
+		port = this.getConfig().getInt("port"); 
+		getLogger().info("MCPE服务器Motd:" + Motd);
+		getLogger().info("MCPE服务器Port:" + port);
 	}
- 
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("LittleBrother")) { 
-			if (args.length == 0){
-				sender.sendMessage("§c--- 本指令等同于/lb ---");
-				sender.sendMessage("§a/LittleBrother version - 显示当前版本.");
-				sender.sendMessage("§a/LittleBrother status - 显示当前运行状态.");
-				return true;
-			} else if ((args.length == 1) && args[0].equalsIgnoreCase("version")) {
-				// version
-				sender.sendMessage("§c["+plugin.getDescription().getName() + "-Version] §3" + plugin.getDescription().getVersion());
-				return true;
-			}else if ((args.length == 1) && args[0].equalsIgnoreCase("status")) {
-				Motd = LittleBrother.Motd;
-				port = LittleBrother.port;
-				sender.sendMessage("§c当前PE服务器名称：" + Motd);
-				sender.sendMessage("§c当前PE服务器端口：" + port);
-				return true;
-			}
-		}
-		return false;
-	}
+	
+	@Override
+    	public void onDisable() {
+        	getLogger().info("LittleBrother插件已被卸载！");
+    	}
 }
