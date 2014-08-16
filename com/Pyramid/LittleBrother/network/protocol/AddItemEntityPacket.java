@@ -1,6 +1,6 @@
 package com.Pyramid.LittleBrother.network.protocol;
 
-import com.Pyramid.LittleBrother.network.Binary;//update
+import com.Pyramid.LittleBrother.network.Binary;
 
 class AddItemEntityPacket extends DataPacket{
 	public int eid;
