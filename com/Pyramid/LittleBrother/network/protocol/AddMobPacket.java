@@ -8,8 +8,8 @@ class AddMobPacket extends DataPacket{
 	public int x;
 	public int y;
 	public int z;
-	public int pitch;
-	public int yaw;
+	public float pitch;
+	public float yaw;
 	public byte[] metadata;
 
 	public function pid(){
@@ -27,8 +27,8 @@ class AddMobPacket extends DataPacket{
 		this.putInt(x);
 		this.putInt(y);
 		this.putInt(z);
-		this.putByte(floor(yaw * (256 / 360)));
-		this.putByte(floor(pitch * (256 / 360)));
+		this.putByte((byte)floor(yaw * (256 / 360)));
+		this.putByte((byte)floor(pitch * (256 / 360)));
 		this.put(Binary.writeMetadata(metadata));
 	}
 
