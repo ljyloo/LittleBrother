@@ -1,7 +1,5 @@
 package com.Pyramid.LittleBrother.network.protocol;
 
-import com.Pyramid.LittleBrother.network.Binary;
-
 class StartGamePacket extends DataPacket{
 	public int seed;
 	public int generator;
@@ -14,7 +12,7 @@ class StartGamePacket extends DataPacket{
 	public float y;
 	public float z;
 
-	public void pid(){
+	public byte pid(){
 		return Info.START_GAME_PACKET;
 	}
 
@@ -31,7 +29,7 @@ class StartGamePacket extends DataPacket{
 		this.putInt(spawnX);
 		this.putInt(spawnY);
 		this.putInt(spawnZ);
-	  this.putFloat(x);
+		this.putFloat(x);
 		this.putFloat(y);
 		this.putFloat(z);
 	}
