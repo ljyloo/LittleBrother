@@ -1,6 +1,5 @@
 package com.Pyramid.LittleBrother.network.protocol;
 import com.Pyramid.LittleBrother.network.Binary;
-import java.nio.charset.Charset;
 
 class LoginStatusPacket extends DataPacket{
 	public int status;
