@@ -15,7 +15,7 @@ class LoginStatusPacket extends DataPacket{
 
 	public void encode(){
 		this.reset();
-		this.putInt(this.status);
+		this.putInt(status);
 	}
 
 }
