@@ -29,6 +29,14 @@ public class Binary{
 		return bytes;
 	}
 
+	public static byte[] writeTriad(int data){
+		byte[] bytes = new byte[3];
+		bytes[0] = (byte) (data & 0xff);
+		bytes[1] = (byte) ((data & 0xff00) >> 8);
+		bytes[2] = (byte) ((data & 0xff0000) >> 16);
+		return bytes;
+	}
+
 	public static byte[] getBytes(int data){
 		byte[] bytes = new byte[4];
 		bytes[0] = (byte) (data & 0xff);
@@ -76,6 +84,10 @@ public class Binary{
 
 	public static char getChar(byte[] bytes){
 		return (char) ((0xff & bytes[0]) | (0xff00 & (bytes[1] << 8)));
+	}
+
+	public static int readTriad(byte[] bytes){
+		return (0xff & bytes[0]) | (0xff00 & (bytes[1] << 8)) | (0xff0000 & (bytes[2] << 16));
 	}
 
 	public static int getInt(byte[] bytes){
