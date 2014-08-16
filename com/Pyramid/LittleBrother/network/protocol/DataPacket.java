@@ -95,6 +95,10 @@ abstract class DataPacket{
 		this.put(Binary.getBytes(s));
 	}
 	
+	protected void putInt(int i){
+		this.put(Binary.getBytes(i));
+	}
+	
 	protected void putTriad(int v){
 		this.put(Binary.writeTriad(v));
 	}
