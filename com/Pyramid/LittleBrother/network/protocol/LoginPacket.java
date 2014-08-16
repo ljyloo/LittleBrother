@@ -1,8 +1,5 @@
 package com.Pyramid.LittleBrother.network.protocol;
 
-import com.Pyramid.LittleBrother.network.Binary;
-import java.nio.charset.Charset;
-
 class LoginPacket extends DataPacket{
 	public String username;
 	public int protocol1;
@@ -10,11 +7,13 @@ class LoginPacket extends DataPacket{
 	public int clientId;
 	public String loginData;
 	
-	public void pid(){
-	    return Info.LOGIN_PACKET;
+	@Override
+	public byte pid(){
+		return Info.LOGIN_PACKET;
 	}
 	
-	public void decode(){
+	@Override
+	public void encode(){
 		this.username = this.getString();
 		this.protocol1 = this.getInt();
 		this.protocol2 = this.getInt();
@@ -22,8 +21,8 @@ class LoginPacket extends DataPacket{
 		this.loginData = this.getString();
 	}
 	
-	public void encode(){
-
+	@Override
+	public void decode(){
+		
 	}
-	
 }
