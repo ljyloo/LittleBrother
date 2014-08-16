@@ -8,7 +8,7 @@ class AddPaintingPacket extends DataPacket{
 	public int direction;
 	public String title;
 
-	public void pid(){
+	public byte pid(){
 		return Info.ADD_PAINTING_PACKET;
 	}
 
