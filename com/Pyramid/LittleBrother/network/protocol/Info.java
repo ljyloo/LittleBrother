@@ -3,7 +3,7 @@ package com.Pyramid.LittleBrother.network.protocol;
 interface Info {
 
 	/**
-	 * Actual Minecraft: PE protocol version
+	 * Actual Minecraft: PE protocol version；
 	 */
 	int CURRENT_PROTOCOL = 18;
 
