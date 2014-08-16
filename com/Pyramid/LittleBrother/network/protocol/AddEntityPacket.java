@@ -13,15 +13,15 @@ class AddEntityPacket extends DataPacket{
 	public short speedY;
 	public short speedZ;
 
-	public function pid(){
+	public void pid(){
 		return Info.ADD_ENTITY_PACKET;
 	}
 
-	public function decode(){
+	public void decode(){
 
 	}
 
-	public function encode(){
+	public void encode(){
 		this.reset();
 		this.putInt(eid);
 		this.putByte(type);
