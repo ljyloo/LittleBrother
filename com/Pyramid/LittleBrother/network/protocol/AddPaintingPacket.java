@@ -8,15 +8,15 @@ class AddPaintingPacket extends DataPacket{
 	public int direction;
 	public String title;
 
-	public function pid(){
+	public void pid(){
 		return Info.ADD_PAINTING_PACKET;
 	}
 
-	public function decode(){
+	public void decode(){
 
 	}
 
-	public function encode(){
+	public void encode(){
 		this.reset();
 		this.putInt(eid);
 		this.putInt(x);
