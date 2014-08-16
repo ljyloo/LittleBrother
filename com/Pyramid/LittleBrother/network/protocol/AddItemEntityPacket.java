@@ -12,15 +12,15 @@ class AddItemEntityPacket extends DataPacket{
 	public byte pitch;
 	public byte roll;
 
-	public function pid(){
+	public void pid(){
 		return Info.ADD_ITEM_ENTITY_PACKET;
 	}
 
-	public function decode(){
+	public void decode(){
 
 	}
 
-	public function encode(){
+	public void encode(){
 		this.reset();
 		this.putInt(eid);
 		this.putSlot(item);
