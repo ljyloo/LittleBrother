@@ -38,8 +38,8 @@ abstract class Packet{
 		return Binary.getShort(this.get(2));
 	}
 	
-	protected byte[] getTriad(){
-		return this.get(3);
+	protected int getTriad(){
+		return Binary.readTriad(this.get(3));
 	}
 	
 	protected int getInt(){
@@ -74,8 +74,8 @@ abstract class Packet{
 		this.put(Binary.getBytes(s));
 	}
 	
-	protected void putTriad(byte[] t){
-		this.put(t);
+	protected void putTriad(int v){
+		this.put(Binary.writeTriad(v));
 	}
 	
 	protected void putLong(long l){
