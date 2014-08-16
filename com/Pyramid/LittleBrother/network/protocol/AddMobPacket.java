@@ -12,15 +12,15 @@ class AddMobPacket extends DataPacket{
 	public float yaw;
 	public byte[] metadata;
 
-	public function pid(){
+	public void pid(){
 		return Info::ADD_MOB_PACKET;
 	}
 
-	public function decode(){
+	public void decode(){
 
 	}
 
-	public function encode(){
+	public void encode(){
 		this.reset();
 		this.putInt(eid);
 		this.putInt(type);
