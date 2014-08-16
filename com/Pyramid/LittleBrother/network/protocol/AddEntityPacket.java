@@ -13,7 +13,7 @@ class AddEntityPacket extends DataPacket{
 	public short speedY;
 	public short speedZ;
 
-	public void pid(){
+	public byte pid(){
 		return Info.ADD_ENTITY_PACKET;
 	}
 
