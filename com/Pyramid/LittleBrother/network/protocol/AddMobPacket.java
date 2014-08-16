@@ -12,8 +12,8 @@ class AddMobPacket extends DataPacket{
 	public float yaw;
 	public byte[] metadata;
 
-	public void pid(){
-		return Info::ADD_MOB_PACKET;
+	public byte pid(){
+		return Info.ADD_MOB_PACKET;
 	}
 
 	public void decode(){
