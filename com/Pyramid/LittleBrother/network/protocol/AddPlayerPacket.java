@@ -15,7 +15,7 @@ class AddPlayerPacket extends DataPacket{
 	public Short unknown2;
 	public byte[] metadata;
 
-	public void pid(){
+	public byte pid(){
 		return Info.ADD_PLAYER_PACKET;
 	}
 
