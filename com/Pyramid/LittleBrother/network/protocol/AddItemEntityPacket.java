@@ -12,7 +12,7 @@ class AddItemEntityPacket extends DataPacket{
 	public byte pitch;
 	public byte roll;
 
-	public void pid(){
+	public byte pid(){
 		return Info.ADD_ITEM_ENTITY_PACKET;
 	}
 
