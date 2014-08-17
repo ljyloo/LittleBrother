@@ -7,10 +7,16 @@ public class Server {
 	private int port;
 	private String motd;
 	
+	protected UDPServer udp;
+	
 	public Server(Logger logger, int port, String motd){
 		this.logger = logger;
 		this.port = port;
 		this.motd = motd;
+	}
+	
+	public void run(){
+		this.udp = new UDPServer(this.logger, this.port);
 	}
 	
 	public String getMotd(){
