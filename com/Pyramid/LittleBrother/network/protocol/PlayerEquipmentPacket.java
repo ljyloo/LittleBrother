@@ -1,4 +1,4 @@
-com.Pyramid.LittleBrother.network.protocol;
+com.Pyramid.LittleBrother.network.protocol;//update
 
 class PlayerEquipmentPacket extends DataPacket{
 	public int eid;
