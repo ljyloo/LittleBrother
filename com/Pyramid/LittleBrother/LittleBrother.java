@@ -27,17 +27,17 @@ public class LittleBrother extends JavaPlugin{
 		this.thread = new ServerThread(getLogger());
 		this.config = new ConfigAccessor(this,"config.yml");
 		this.config.saveDefaultConfig();
-		getLogger().info("LittleBrother插件已被加载！");
+		getLogger().info("LittleBrother have been onabled！");
 		Motd = this.getConfig().getString("motd");
 		port = this.getConfig().getInt("port"); 
-		getLogger().info("MCPE服务器Motd:" + Motd);
-		getLogger().info("MCPE服务器Port:" + port);
+		getLogger().info("MCPE Server Motd:" + Motd);
+		getLogger().info("MCPE Server Port:" + port);
 		this.getCommand("LittleBrother").setExecutor(new LBCommands(this));
 	}
 	
 	@Override
     public void onDisable() {
-        	getLogger().info("LittleBrother插件已被卸载！");
+        	getLogger().info("LittleBrother have been disabled！");
     	}
 	
 	public FileConfiguration load(File file){
