@@ -7,4 +7,6 @@ A CraftBukkit plugin that allows players who are playing Minecraft : Pocket Edit
 
 [English](https://github.com/ljyloo/LittleBrother/blob/master/docs/README_ENGLISH.md)
 
-[中文](https://github.com/ljyloo/LittleBrother/blob/master/docs/README_CHINESE.md)
+[中文(简体)](https://github.com/ljyloo/LittleBrother/blob/master/docs/README_CHS.md)
+
+[中文(繁体)](https://github.com/ljyloo/LittleBrother/blob/master/docs/README_CHT.md)
