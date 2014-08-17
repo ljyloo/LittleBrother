@@ -19,10 +19,10 @@ public class LBCommands implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("LittleBrother")) { 
 			if (args.length == 0){
-				sender.sendMessage("§c--- 本指令等同于/lb ---");
-				sender.sendMessage("§a/LittleBrother version - 显示当前版本.");
-				sender.sendMessage("§a/LittleBrother status - 显示当前运行状态.");
-				sender.sendMessage("§a/LittleBrother reload - 重载配置文件.");
+				sender.sendMessage("§c---Command alias:/lb ---");
+				sender.sendMessage("§a/LittleBrother version - Shows you the version of the plugin.");
+				sender.sendMessage("§a/LittleBrother status - Shows the status of your LittleBrother PocketEdition Server.");
+				sender.sendMessage("§a/LittleBrother reload - Reload config file.");
 				return true;
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("version")) {
 				// version
@@ -31,14 +31,14 @@ public class LBCommands implements CommandExecutor {
 			}else if ((args.length == 1) && args[0].equalsIgnoreCase("status")) {
 				Motd = LittleBrother.Motd;
 				port = LittleBrother.port;
-				sender.sendMessage("§c当前PE服务器名称：" + Motd);
-				sender.sendMessage("§c当前PE服务器端口：" + port);
+				sender.sendMessage("§cThis PE server name：" + Motd);
+				sender.sendMessage("§cThis PE server port：" + port);
 				return true;
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("reload")) {
-				sender.sendMessage("§c正在重载配置文件！");
+				sender.sendMessage("§creloading config file....");
 				//config.reloadConfig();
 				//plugin.reloadConfig();
-				sender.sendMessage("§c重载配置文件完成！");
+				sender.sendMessage("§cReload config file is complete！");
 				return true;
 			}
 		}
