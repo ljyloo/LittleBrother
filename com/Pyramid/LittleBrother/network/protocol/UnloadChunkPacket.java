@@ -7,7 +7,7 @@ class UnloadChunkPacket extends DataPacket{
 	public int chunkZ;
 	
 	public byte pid(){
-		return Info.UnloadChunkPacket;
+		return Info.UNLOAD_CHUNK_PACKET;
 	}
 
 	public void decode(){
