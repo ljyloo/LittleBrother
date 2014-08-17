@@ -10,7 +10,7 @@ class UpdateBlockPacket extends DataPacket{
 	public byte meta;
 
 	public byte pid(){
-		return Info.UpdateBlockPacket;
+	    return Info.UPDATE_BLOCK_PACKET;
 	}
 
 	public void decode(){
@@ -18,13 +18,12 @@ class UpdateBlockPacket extends DataPacket{
 	}
 
 	public void encode(){
-	  this.reset();
-		this.putInt(x);
-		this.putInt(z);
-		this.putByte(y);
-		this.putByte(block);
-		this.putByte(meta);
-		}
+	    this.reset();
+	    this.putInt(x);
+	    this.putInt(z);
+	    this.putByte(y);
+	    this.putByte(block);
+            this.putByte(meta);
 	}
 
 }
