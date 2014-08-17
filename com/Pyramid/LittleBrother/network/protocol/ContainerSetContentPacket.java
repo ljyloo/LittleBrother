@@ -1,33 +1,32 @@
-
+/*
 class ContainerSetContentPacket extends DataPacket{
 	public byte windowid;
-	public short slots[];
-	public int hotbar[];
+	public byte[] slots[];
+	public byte[] hotbar[];
 
-	public void pid(){
+	public byte pid(){
 		return Info.CONTAINER_SET_CONTENT_PACKET;
 	}
 
 	public void decode(){
-		this.windowid = this.getByte();
+		windowid = this.getByte();
 		short count = this.getShort();
-                slots = new Item[count];
-                int s;
-		for(s = 0; s < count and !this.feof(); ++s){
-			this.slots[s] = this.getSlot();
+                //slots = new Item[count];
+		for(int s = 0; s < count; ++s){
+			slots[s] = this.getSlot();
 		}
-		if(this.windowid == 0){
+		if(windowid == 0){
 			count = this.getShort();
-                        hotbar = new int[count];
-			for(s = 0; s < count and !this.feof(); ++s){
-				this.hotbar[s] = this.getInt();
+                        //hotbar = new int[count];
+			for(int j = 0; j < count; ++j){
+				hotbar[j] = this.getInt();
 			}
 		}
 	}
 
 	public void encode(){
 		this.reset();
-		this.putByte(this.windowid);
+		this.putByte(windowid);
 		this.putShort(slots.length);
 		foreach(Item slot : slots){
 			this.putSlot(slot);
@@ -42,3 +41,4 @@ class ContainerSetContentPacket extends DataPacket{
 		}
 	}
 ｝
+*/
