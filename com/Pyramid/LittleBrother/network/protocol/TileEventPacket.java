@@ -10,7 +10,7 @@ class TileEventPacket extends DataPacket{
 	public int case2;
 
 	public byte pid(){
-		return Info.TileEventPacket;
+		return Info.TILE_EVENT_PACKET;
 	}
 
 	public void decode(){
