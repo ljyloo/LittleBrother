@@ -18,27 +18,27 @@ class UseItemPacket extends DataPacket{
 	public float posZ;
 
 	public byte pid(){
-		return UseItemPacket;
+		return Info.USE_ITEM_PACKET;
 	}
 
 	public void decode(){
-     this.x = this.getInt();
-	 this.y = this.getInt();
-	 this.z = this.getInt();
-	 this.face = this.getInt();
-	 this.item = this.getShort();
-	 this.meta = this.getShort();
-	 this.eid = this.getInt();
-	 this.fx = this.getFloat();
-	 this.fy = this.getFloat();
-	 this.fz = this.getFloat();
-	 this.posX = this.getFloat();
-	 this.posY = this.getFloat();
-	 this.posZ = this.getFloat();
+         x = this.getInt();
+	 y = this.getInt();
+	 z = this.getInt();
+	 face = this.getInt();
+	 item = this.getShort();
+	 meta = this.getShort();
+	 eid = this.getInt();
+	 fx = this.getFloat();
+	 fy = this.getFloat();
+	 fz = this.getFloat();
+	 posX = this.getFloat();
+	 posY = this.getFloat();
+	 posZ = this.getFloat();
 	}
 
 	public void encode(){
-		}
+
 	}
 
 }
