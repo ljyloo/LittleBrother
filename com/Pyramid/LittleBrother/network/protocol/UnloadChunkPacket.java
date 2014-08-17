@@ -16,9 +16,9 @@ class UnloadChunkPacket extends DataPacket{
 
 	public void encode(){
 	    this.reset();
-		this.putInt(chunkX);
-		this.putInt(chunkZ);
-		}
+            this.putInt(chunkX);
+	    this.putInt(chunkZ);
+		
 	}
 
 }
