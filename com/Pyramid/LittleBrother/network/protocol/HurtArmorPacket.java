@@ -1,7 +1,7 @@
 com.Pyramid.LittleBrother.network.protocol;
 
 class HurtArmorPacket extends DataPacket{
-	public byte health;//byte?really?
+	public byte health;
 
 	public byte pid(){
 		return Info.HURT_ARMOR_PACKET;
