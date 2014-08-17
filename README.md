@@ -3,7 +3,7 @@ LittleBrother
 
 A CraftBukkit plugin that allows players who are playing Minecraft : Pocket Edition join in the CraftBukkit server.
 
-###See other language###
+###README.MD in other languages###
 
 [English](https://github.com/ljyloo/LittleBrother/blob/master/docs/README_ENGLISH.md)
 
