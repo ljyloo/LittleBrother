@@ -22,19 +22,19 @@ class UseItemPacket extends DataPacket{
 	}
 
 	public void decode(){
-         x = this.getInt();
-	 y = this.getInt();
-	 z = this.getInt();
-	 face = this.getInt();
-	 item = this.getShort();
-	 meta = this.getShort();
-	 eid = this.getInt();
-	 fx = this.getFloat();
-	 fy = this.getFloat();
-	 fz = this.getFloat();
-	 posX = this.getFloat();
-	 posY = this.getFloat();
-	 posZ = this.getFloat();
+		x = this.getInt();
+		y = this.getInt();
+		z = this.getInt();
+		face = this.getInt();
+		item = this.getShort();
+		meta = this.getShort();
+		eid = this.getInt();
+		fx = this.getFloat();
+		fy = this.getFloat();
+		fz = this.getFloat();
+		posX = this.getFloat();
+		posY = this.getFloat();
+		posZ = this.getFloat();
 	}
 
 	public void encode(){
