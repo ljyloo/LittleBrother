@@ -1,7 +1,7 @@
 package com.Pyramid.LittleBrother.network.protocol;
 
 class ChatPacket extends DataPacket{
-	public String message;//test eclispe
+	public String message;
 
 	public byte pid(){
 		return Info.CHAT_PACKET;
