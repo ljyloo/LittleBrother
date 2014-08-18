@@ -5,10 +5,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 public class LBCommands implements CommandExecutor {
-	private final LittleBrother plugin;
+	private LittleBrother plugin;
 	private String Motd;
 	private int port;
-	private ConfigAccessor config;
+	public ConfigAccessor config;
  
 	public LBCommands(LittleBrother plugin) {
 		this.plugin = plugin; // Store the plugin in situations where you need it.
@@ -30,14 +30,16 @@ public class LBCommands implements CommandExecutor {
 				sender.sendMessage("§c["+plugin.getDescription().getName() + "-Version] §3" + plugin.getDescription().getVersion());
 				return true;
 			}else if ((args.length == 1) && args[0].equalsIgnoreCase("status")) {
-				Motd = this.plugin.Motd;
-				port = this.plugin.port;
+				//Motd = this.plugin.Motd;
+				//port = this.plugin.port;
+				Motd = plugin.getConfig().getString("motd");
+				port = plugin.getConfig().getInt("port"); 
 				sender.sendMessage("§cThis PE server name：" + Motd);
 				sender.sendMessage("§cThis PE server port：" + port);
 				return true;
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("reload")) {
 				sender.sendMessage("§creloading config file....");
-				//config.reloadConfig();
+				this.plugin.reloadConfig();
 				//plugin.reloadConfig();
 				sender.sendMessage("§cReload config file is complete！");
 				return true;
