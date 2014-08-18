@@ -1,7 +1,5 @@
 package com.Pyramid.LittleBrother.network.protocol;
 
-import com.Pyramid.LittleBrother.network.Binary;
-
 class AddMobPacket extends DataPacket{
 	public int eid;
 	public int type;
@@ -29,7 +27,7 @@ class AddMobPacket extends DataPacket{
 		this.putInt(z);
 		this.putByte((byte)Math.floor(yaw * (256 / 360)));
 		this.putByte((byte)Math.floor(pitch * (256 / 360)));
-		this.put(Binary.writeMetadata(metadata));
+		//this.put(Binary.writeMetadata(metadata));
 	}
 
 }

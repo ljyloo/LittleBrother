@@ -1,7 +1,5 @@
 package com.Pyramid.LittleBrother.network.protocol;
 
-import com.Pyramid.LittleBrother.network.Binary;
-import java.nio.charset.Charset;
 class AddPlayerPacket extends DataPacket{
 	public long clientID;
 	public String username;
@@ -35,7 +33,7 @@ class AddPlayerPacket extends DataPacket{
 		this.putByte((byte) (pitch * (256 / 360)));
 		this.putShort(unknown1);
 		this.putShort(unknown2);
-		this.put(Binary.writeMetadata(metadata));
+		//this.put(Binary.writeMetadata(metadata));
 	}
 
 }
