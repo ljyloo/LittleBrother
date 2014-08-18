@@ -1,7 +1,5 @@
 package com.Pyramid.LittleBrother.network.protocol;
 
-import com.Pyramid.LittleBrother.network.Binary;
-
 class UnloadChunkPacket extends DataPacket{
 	public int chunkX;
 	public int chunkZ;

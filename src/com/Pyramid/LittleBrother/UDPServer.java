@@ -5,15 +5,19 @@ import java.net.*;
 
 public class UDPServer {
     /** @var Logger */
-    private logger;
+    private Logger logger;
     /** @var DatagramSocket */
-    private socket;
-    private port;
+    private DatagramSocket socket;
+    private int port;
     
     public UDPServer(Logger logger, int port) {
         this.logger = logger;
         this.port = port;
         
-        this.socket = new DatagramSocket(port);
+        try {
+			this.socket = new DatagramSocket(port);
+		} catch (SocketException e) {
+			e.printStackTrace();
+		}
     }
 }

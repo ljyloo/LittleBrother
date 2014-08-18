@@ -1,5 +1,7 @@
 package com.Pyramid.LittleBrother.network.protocol;
 
+import com.Pyramid.LittleBrother.Item;
+
 class DropItemPacket extends DataPacket{
 	public int eid;
 	public byte unknown;
