@@ -14,7 +14,7 @@ class UnknownPacket extends DataPacket{
 	}
 
 	public void encode(){
-		}
+		
 	}
 
 }
