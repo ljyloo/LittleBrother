@@ -7,11 +7,11 @@ class HurtArmorPacket extends DataPacket{
 		return Info.HURT_ARMOR_PACKET;
 	}
 
-	public function decode(){
+	public void decode(){
 
 	}
 
-	public function encode(){
+	public void encode(){
 		this.reset();
 		this.putByte(health);
 	}

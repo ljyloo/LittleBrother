@@ -1,7 +1,5 @@
 package com.Pyramid.LittleBrother.network.protocol;
 
-import com.Pyramid.LittleBrother.network.Binary;
-
 class UseItemPacket extends DataPacket{
 	public int x;
 	public int y;

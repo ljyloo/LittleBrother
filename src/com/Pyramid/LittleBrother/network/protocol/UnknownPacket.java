@@ -1,7 +1,5 @@
 package com.Pyramid.LittleBrother.network.protocol;
 
-import com.Pyramid.LittleBrother.network.Binary;
-
 class UnknownPacket extends DataPacket{
 	int packetID = -1;
 

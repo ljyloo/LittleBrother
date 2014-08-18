@@ -31,8 +31,8 @@ class AddPlayerPacket extends DataPacket{
 		this.putFloat(x);
 		this.putFloat(y);
 		this.putFloat(z);
-		this.putByte((int) (yaw * (256 / 360)));//TODO
-		this.putByte((int) (pitch * (256 / 360)));//TODO
+		this.putByte((byte) (yaw * (256 / 360)));
+		this.putByte((byte) (pitch * (256 / 360)));
 		this.putShort(unknown1);
 		this.putShort(unknown2);
 		this.put(Binary.writeMetadata(metadata));

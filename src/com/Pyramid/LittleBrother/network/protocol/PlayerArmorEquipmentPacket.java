@@ -10,7 +10,7 @@ class PlayerArmorEquipmentPacket extends DataPacket{
 
 	public void decode(){
 		eid = this.getInt();
-		slots[0] = thi.getByte();
+		slots[0] = this.getByte();
 		slots[1] = this.getByte();
 		slots[2] = this.getByte();
 		slots[3] = this.getByte();

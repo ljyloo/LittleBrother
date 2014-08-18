@@ -1,7 +1,5 @@
 package com.Pyramid.LittleBrother.network.protocol;
 
-import com.Pyramid.LittleBrother.network.Binary;
-
 class AddEntityPacket extends DataPacket{
 	public int eid;
 	public byte type;
@@ -30,9 +28,9 @@ class AddEntityPacket extends DataPacket{
 		this.putFloat(z);
 		this.putInt(did);
 		if(did > 0){
-			this.putShort(speedX * 8000);
-			this.putShort(speedY * 8000);
-			this.putShort(speedZ * 8000);
+			this.putShort((short) (speedX * 8000));
+			this.putShort((short) (speedY * 8000));
+			this.putShort((short) (speedZ * 8000));
 		}
 	}
 
