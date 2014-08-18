@@ -3,15 +3,17 @@ package com.Pyramid.LittleBrother;
 import java.util.logging.Logger;
 
 public class ServerThread extends Thread{
+	private LittleBrother plugin;
 	private Logger logger;
 	private Server server;
 	private String Motd;
 	private int port;
 	
-	public ServerThread(Logger logger){
+	public ServerThread(LittleBrother plugin, Logger logger){
+		this.plugin = plugin;
 		this.logger = logger;
-		Motd = LittleBrother.Motd;
-		port = LittleBrother.port;
+		Motd = plugin.Motd;
+		port = plugin.port;
 		this.start();
 	}
 	

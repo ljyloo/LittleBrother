@@ -9,9 +9,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class LittleBrother extends JavaPlugin{
 	private ServerThread thread;
-	static ConfigAccessor config;
-	static String Motd;
-	static int port;
+	public ConfigAccessor config;
+	public String Motd;
+	public int port;
 	
 	//public void onload(){
 	//	saveDefaultConfig();
@@ -23,7 +23,7 @@ public class LittleBrother extends JavaPlugin{
 		//	getDataFolder().mkdir();
 		//	new File(getDataFolder(), "config.yml");
 		//}
-		this.thread = new ServerThread(getLogger());
+		this.thread = new ServerThread(this, getLogger());
 		this.config = new ConfigAccessor(this,"config.yml");
 		this.config.saveDefaultConfig();
 		getLogger().info("LittleBrother have been onabled！");

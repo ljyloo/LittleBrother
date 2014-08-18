@@ -8,10 +8,11 @@ public class LBCommands implements CommandExecutor {
 	private final LittleBrother plugin;
 	private String Motd;
 	private int port;
-	private ConfigAccessor config = LittleBrother.config;
+	private ConfigAccessor config;
  
 	public LBCommands(LittleBrother plugin) {
 		this.plugin = plugin; // Store the plugin in situations where you need it.
+		this.config = this.plugin.config;
 		//Motd = this.plugin.Motd;
 		//port = this.plugin.port;
 	}
@@ -29,8 +30,8 @@ public class LBCommands implements CommandExecutor {
 				sender.sendMessage("§c["+plugin.getDescription().getName() + "-Version] §3" + plugin.getDescription().getVersion());
 				return true;
 			}else if ((args.length == 1) && args[0].equalsIgnoreCase("status")) {
-				Motd = LittleBrother.Motd;
-				port = LittleBrother.port;
+				Motd = this.plugin.Motd;
+				port = this.plugin.port;
 				sender.sendMessage("§cThis PE server name：" + Motd);
 				sender.sendMessage("§cThis PE server port：" + port);
 				return true;
