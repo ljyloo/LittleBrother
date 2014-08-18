@@ -1,4 +1,4 @@
-com.Pyramid.LittleBrother.network.protocol;
+package com.Pyramid.LittleBrother.network.protocol;
 
 class LevelEventPacket extends DataPacket{
 	public short evid;
