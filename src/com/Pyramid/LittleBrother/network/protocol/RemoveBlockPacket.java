@@ -4,7 +4,7 @@ class RemoveBlockPacket extends DataPacket{
 	public int eid;
 	public int x;
 	public byte y;
-	public int ;
+	public int z;
 
 	public byte pid(){
 		return Info.REMOVE_BLOCK_PACKET;
