@@ -24,7 +24,6 @@ class TileEventPacket extends DataPacket{
 		this.putInt(z);
 		this.putInt(case1);
 		this.putInt(case2);
-		}
 	}
 
 }
