@@ -13,7 +13,7 @@ class RemoveEntityPacket extends DataPacket{
 
 	public void encode(){
 		this.reset();
-	    this.putInt(eid);
+		this.putInt(eid);
 	}
 
 }
