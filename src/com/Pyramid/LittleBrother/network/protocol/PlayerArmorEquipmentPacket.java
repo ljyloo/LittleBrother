@@ -2,7 +2,7 @@ package com.Pyramid.LittleBrother.network.protocol;
 
 class PlayerArmorEquipmentPacket extends DataPacket{
 	public int eid;
-	public byte[] slots = [];
+	public byte[] slots = new byte[4];
 
 	public byte pid(){
 		return Info.PLAYER_ARMOR_EQUIPMENT_PACKET;
