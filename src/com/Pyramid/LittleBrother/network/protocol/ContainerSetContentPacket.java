@@ -1,6 +1,6 @@
 package com.Pyramid.LittleBrother.network.protocol;
 
-import com.Pyramid.*;
+import com.Pyramid.LittleBrother.Item;
 
 class ContainerSetContentPacket extends DataPacket{
 	public byte windowid;
