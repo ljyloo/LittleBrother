@@ -3,7 +3,7 @@ package com.Pyramid.LittleBrother.network.protocol;
 class DropItemPacket extends DataPacket{
 	public int eid;
 	public byte unknown;
-	public item item;
+	public Item item;
 
 	public byte pid(){
 		return Info.DROP_ITEM_PACKET;
