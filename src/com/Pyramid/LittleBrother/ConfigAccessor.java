@@ -31,15 +31,29 @@ public class ConfigAccessor{
  
     public void reloadConfig() {        
         //plugin.reloadConfig();
-    	fileConfiguration = YamlConfiguration.loadConfiguration(configFile);
+    	//fileConfiguration = YamlConfiguration.loadConfiguration(configFile);
     	//super.reloadConfig();
         //Look for defaults in the jar
-        InputStream defConfigStream = plugin.getResource(fileName);
+        /*InputStream defConfigStream = plugin.getResource(fileName);
         if (defConfigStream != null) {
         	//TODO
-            //YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(new InputStreamReader(defConfigStream));
-            //fileConfiguration.setDefaults(defConfig);
-        }
+            YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(new InputStreamReader(defConfigStream));
+            fileConfiguration.setDefaults(defConfig);
+        }*/
+    		if (configFile == null)
+    		{
+    			File dataFolder = plugin.getDataFolder();
+    			if (dataFolder == null)
+    				throw new IllegalStateException();
+    			configFile = new File(dataFolder, fileName);
+    		}
+    		fileConfiguration = YamlConfiguration.loadConfiguration(configFile);
+    		InputStream defConfigStream = plugin.getResource(fileName);
+    		if (defConfigStream != null)
+    		{
+    			YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigStream);
+    			fileConfiguration.setDefaults(defConfig);
+    		}
     }
  
     public FileConfiguration getConfig() {
