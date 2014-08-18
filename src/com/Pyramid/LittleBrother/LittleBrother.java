@@ -33,8 +33,7 @@ public class LittleBrother extends JavaPlugin{
 		getLogger().info("MCPE Server Port:" + port);
 		this.getCommand("LittleBrother").setExecutor(new LBCommands(this));
 	}
-	
-	@Override
+
     public void onDisable() {
         	getLogger().info("LittleBrother have been disabled！");
     	}
