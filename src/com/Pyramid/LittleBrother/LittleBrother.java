@@ -16,8 +16,7 @@ public class LittleBrother extends JavaPlugin{
 	//public void onload(){
 	//	saveDefaultConfig();
 	//}
-	
-	@Override
+
 	public void onEnable(){
 		//if(!getDataFolder().exists())
 		//{
