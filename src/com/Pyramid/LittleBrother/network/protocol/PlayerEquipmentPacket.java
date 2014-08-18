@@ -1,4 +1,4 @@
-com.Pyramid.LittleBrother.network.protocol;
+package com.Pyramid.LittleBrother.network.protocol;
 
 class PlayerEquipmentPacket extends DataPacket{
 	public int eid;
