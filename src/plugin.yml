@@ -14,4 +14,3 @@ commands:
       aliases: [lb]
       permission: LittleBrother.lb
       permission-message: You don't have <permission>
-//TODO
