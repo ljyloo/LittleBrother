@@ -9,10 +9,12 @@ public class LBCommands implements CommandExecutor {
 	private String Motd;
 	private int port;
 	public ConfigAccessor config;
+	public Messages msgs;
  
 	public LBCommands(LittleBrother plugin) {
 		this.plugin = plugin; // Store the plugin in situations where you need it.
 		this.config = this.plugin.config;
+		//this.msgs = this.plugin.msgs;
 		//Motd = this.plugin.Motd;
 		//port = this.plugin.port;
 	}
@@ -20,10 +22,11 @@ public class LBCommands implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("LittleBrother")) { 
 			if (args.length == 0){
-				sender.sendMessage("§c---Command alias:/lb ---");
-				sender.sendMessage("§a/LittleBrother version - Shows you the version of the plugin.");
-				sender.sendMessage("§a/LittleBrother status - Shows the status of your LittleBrother PocketEdition Server.");
-				sender.sendMessage("§a/LittleBrother reload - Reload config file.");
+				sender.sendMessage(Messages.msgHelpCommand);
+				//sender.sendMessage("§a/LittleBrother version - Shows you the version of the plugin.");
+				sender.sendMessage(Messages.msgHelpVersion);
+				sender.sendMessage(Messages.msgHelpStatus);
+				sender.sendMessage(Messages.msgHelpReload);
 				return true;
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("version")) {
 				// version
@@ -32,8 +35,8 @@ public class LBCommands implements CommandExecutor {
 			}else if ((args.length == 1) && args[0].equalsIgnoreCase("status")) {
 				//Motd = this.plugin.Motd;
 				//port = this.plugin.port;
-				Motd = plugin.getConfig().getString("motd");
-				port = plugin.getConfig().getInt("port"); 
+				Motd = this.config.getConfig().getString("motd");
+				port = this.config.getConfig().getInt("port"); 
 				sender.sendMessage("§cThis PE server name：" + Motd);
 				sender.sendMessage("§cThis PE server port：" + port);
 				return true;
