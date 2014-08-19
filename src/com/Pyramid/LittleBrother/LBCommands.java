@@ -10,7 +10,7 @@ public class LBCommands implements CommandExecutor {
 	private int port;
 	public ConfigAccessor config;
 	public Messages msgs;
- 
+	
 	public LBCommands(LittleBrother plugin) {
 		this.plugin = plugin; // Store the plugin in situations where you need it.
 		this.config = this.plugin.config;
@@ -18,7 +18,16 @@ public class LBCommands implements CommandExecutor {
 		//Motd = this.plugin.Motd;
 		//port = this.plugin.port;
 	}
- 
+	
+	/**
+	 * 
+	 * @param CommandSender sender
+	 * @param Command cmd
+	 * @param String label
+	 * @param String[] args
+	 * 
+	 * @return boolean
+	 */
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("LittleBrother")) { 
 			if (args.length == 0){

@@ -15,7 +15,12 @@ public class ConfigAccessor{
     
     private File configFile;
     private FileConfiguration fileConfiguration;
- 
+    
+    /**
+     * 
+     * @param plugin
+     * @param fileName
+     */
     public ConfigAccessor(JavaPlugin plugin, String fileName) {
         if (plugin == null)
             throw new IllegalArgumentException("plugin cannot be null");
@@ -26,7 +31,7 @@ public class ConfigAccessor{
             throw new IllegalStateException();
         this.configFile = new File(plugin.getDataFolder(), fileName);
     }
- 
+    
     public void reloadConfig() {        
         //plugin.reloadConfig();
     	//fileConfiguration = YamlConfiguration.loadConfiguration(configFile);
@@ -53,14 +58,18 @@ public class ConfigAccessor{
     			fileConfiguration.setDefaults(defConfig);
     		}*/
     }
- 
+    
+    /**
+     * 
+     * @return FileConfiguration
+     */
     public FileConfiguration getConfig() {
         if (fileConfiguration == null) {
             this.reloadConfig();
         }
         return fileConfiguration;
     }
- 
+    
     public void saveConfig() {
         if (fileConfiguration != null && configFile != null) {
             try {
