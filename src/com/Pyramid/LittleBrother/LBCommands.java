@@ -43,6 +43,7 @@ public class LBCommands implements CommandExecutor {
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("reload")) {
 				sender.sendMessage("§creloading config file....");
 				this.plugin.reloadConfig();
+				this.plugin.Msg.reloadConfig();
 				//plugin.reloadConfig();
 				sender.sendMessage("§cReload config file is complete！");
 				return true;
