@@ -3,12 +3,9 @@ package com.Pyramid.LittleBrother;
 import java.io.File;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.logging.Level;
  
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ConfigAccessor{
@@ -40,7 +37,7 @@ public class ConfigAccessor{
         	//TODO
             YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(new InputStreamReader(defConfigStream));
             fileConfiguration.setDefaults(defConfig);
-        }*/
+        }
     		if (configFile == null)
     		{
     			File dataFolder = plugin.getDataFolder();
@@ -54,7 +51,7 @@ public class ConfigAccessor{
     		{
     			YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigStream);
     			fileConfiguration.setDefaults(defConfig);
-    		}
+    		}*/
     }
  
     public FileConfiguration getConfig() {
