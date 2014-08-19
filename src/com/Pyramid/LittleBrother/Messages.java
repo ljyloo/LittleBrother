@@ -10,6 +10,10 @@ public class Messages {
 	static String msgHelpCommand;
 	static String msgHelpStatus;
 	static String msgHelpReload;
+	static String msgOnabledTip;
+	static String msgOndisable;
+	static String msgServerPort;
+	static String msgServerMotd;
 	
 	public Messages(LittleBrother plugin) {
 		this.plugin = plugin; // Store the plugin in situations where you need it.
@@ -24,7 +28,11 @@ public class Messages {
 		msgHelpVersion = this.Msg.getConfig().getString("msgHelpVersion",msgHelpVersion);
 		msgHelpCommand = this.Msg.getConfig().getString("msgHelpCommand",msgHelpCommand);
 		msgHelpStatus = this.Msg.getConfig().getString("msgHelpStatus",msgHelpStatus);
-		msgHelpReload =this.Msg.getConfig().getString("msgHelpReload",msgHelpReload);
+		msgHelpReload = this.Msg.getConfig().getString("msgHelpReload",msgHelpReload);
+		msgOnabledTip = this.Msg.getConfig().getString("msgOnabledTip",msgOnabledTip);
+		msgServerPort = this.Msg.getConfig().getString("msgServerPort",msgServerPort);
+		msgServerMotd = this.Msg.getConfig().getString("msgServerMotd",msgServerMotd);
+		msgOndisable = this.Msg.getConfig().getString("msgOndisable",msgOndisable);
 	}
 
 	/*private void savemsg() {

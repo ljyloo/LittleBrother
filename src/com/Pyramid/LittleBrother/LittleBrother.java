@@ -30,16 +30,16 @@ public class LittleBrother extends JavaPlugin{
 		Messages msgs = new Messages(this);
 		getLogger().info(Messages.msgLoadTip);
 		this.thread = new ServerThread(this, getLogger());
-		getLogger().info("LittleBrother have been onabled！");
+		getLogger().info(Messages.msgOnabledTip);
 		Motd = this.config.getConfig().getString("motd");
 		port = this.config.getConfig().getInt("port"); 
-		getLogger().info("MCPE Server Motd:" + Motd);
-		getLogger().info("MCPE Server Port:" + port);
+		getLogger().info(Messages.msgServerMotd + Motd);
+		getLogger().info(Messages.msgServerPort + port);
 		this.getCommand("LittleBrother").setExecutor(new LBCommands(this));
 	}
 
     public void onDisable() {
-        	getLogger().info("LittleBrother have been disabled！");
+        	getLogger().info(Messages.msgOndisable);
     	}
 	
 	/*public FileConfiguration load(File file){

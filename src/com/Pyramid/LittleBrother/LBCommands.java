@@ -37,8 +37,8 @@ public class LBCommands implements CommandExecutor {
 				//port = this.plugin.port;
 				Motd = this.config.getConfig().getString("motd");
 				port = this.config.getConfig().getInt("port"); 
-				sender.sendMessage("§cThis PE server name：" + Motd);
-				sender.sendMessage("§cThis PE server port：" + port);
+				sender.sendMessage(Messages.msgServerMotd + Motd);
+				sender.sendMessage(Messages.msgServerPort+ port);
 				return true;
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("reload")) {
 				sender.sendMessage("§creloading config file....");
