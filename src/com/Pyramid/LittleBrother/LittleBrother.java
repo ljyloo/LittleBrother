@@ -1,15 +1,12 @@
 package com.Pyramid.LittleBrother;
 
-import java.io.File;
-import java.io.IOException;
-
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class LittleBrother extends JavaPlugin{
 	private ServerThread thread;
 	public ConfigAccessor config;
+	public Messages msgs;
+	public ConfigAccessor Msg;
 	public String Motd;
 	public int port;
 	
@@ -23,12 +20,19 @@ public class LittleBrother extends JavaPlugin{
 		//	getDataFolder().mkdir();
 		//	new File(getDataFolder(), "config.yml");
 		//}
-		this.thread = new ServerThread(this, getLogger());
+		saveDefaultConfig();
+		Msg = new ConfigAccessor(this,"msg.yml");
+		//Msg.getConfig().options().header("This is Messages.");
+		Msg.saveDefaultConfig();
+		//this.Msg.saveConfig();;
 		this.config = new ConfigAccessor(this,"config.yml");
-		this.config.saveDefaultConfig();
+		//this.Msg.saveDefaultConfig();
+		Messages msgs = new Messages(this);
+		getLogger().info(Messages.msgLoadTip);
+		this.thread = new ServerThread(this, getLogger());
 		getLogger().info("LittleBrother have been onabled！");
-		Motd = this.getConfig().getString("motd");
-		port = this.getConfig().getInt("port"); 
+		Motd = this.config.getConfig().getString("motd");
+		port = this.config.getConfig().getInt("port"); 
 		getLogger().info("MCPE Server Motd:" + Motd);
 		getLogger().info("MCPE Server Port:" + port);
 		this.getCommand("LittleBrother").setExecutor(new LBCommands(this));
@@ -38,7 +42,7 @@ public class LittleBrother extends JavaPlugin{
         	getLogger().info("LittleBrother have been disabled！");
     	}
 	
-	public FileConfiguration load(File file){
+	/*public FileConfiguration load(File file){
 		if(!file.exists()){
 			try{
 				file.createNewFile();
@@ -59,6 +63,6 @@ public class LittleBrother extends JavaPlugin{
 				}
 			}
 		return YamlConfiguration.loadConfiguration(new File(path));
-	}
+	}*/
 
 }
