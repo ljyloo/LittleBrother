@@ -13,18 +13,37 @@ public class Item {
 		this.name = name;
 	}
 	
+	/**
+	 * 
+	 * @param id
+	 * @param meta
+	 * @param count
+	 * @return
+	 */
 	public static Item get(short id, short meta, byte count){
 		return new Item(id, meta, count, "unknow");
 	}
 	
+	/**
+	 * 
+	 * @return short
+	 */
 	public short getID(){
 		return this.id;
 	}
 	
+	/**
+	 * 
+	 * @return short
+	 */
 	public short getDamage(){
 		return this.meta;
 	}
 	
+	/**
+	 * 
+	 * @return byte
+	 */
 	public byte getCount(){
 		return this.count;
 	}
