@@ -2,6 +2,11 @@ package com.Pyramid.LittleBrother;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+/**
+ * Main class of LittleBrother.
+ * 
+ * @see JavaPlugin
+ */
 public class LittleBrother extends JavaPlugin{
 	private ServerThread thread;
 	public ConfigAccessor config;
@@ -13,7 +18,10 @@ public class LittleBrother extends JavaPlugin{
 	//public void onload(){
 	//	saveDefaultConfig();
 	//}
-
+	
+	/**
+	 * Call when enable.
+	 */
 	public void onEnable(){
 		//if(!getDataFolder().exists())
 		//{
@@ -37,7 +45,10 @@ public class LittleBrother extends JavaPlugin{
 		getLogger().info(Messages.msgServerPort + port);
 		this.getCommand("LittleBrother").setExecutor(new LBCommands(this));
 	}
-
+	
+	/**
+	 * Call when disable.
+	 */
     public void onDisable() {
         	getLogger().info(Messages.msgOndisable);
     	}

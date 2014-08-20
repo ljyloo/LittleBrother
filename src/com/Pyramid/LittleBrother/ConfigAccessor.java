@@ -8,16 +8,22 @@ import java.util.logging.Level;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+/**
+ * LittleBrother's config accessor.
+ */
 public class ConfigAccessor{
  
     private final String fileName;
     private final JavaPlugin plugin;
     
+    /** @var File */
     private File configFile;
+    
+    /** @var FileConfiguration */
     private FileConfiguration fileConfiguration;
     
     /**
-     * 
+     * Init
      * @param plugin
      * @param fileName
      */
@@ -32,6 +38,9 @@ public class ConfigAccessor{
         this.configFile = new File(plugin.getDataFolder(), fileName);
     }
     
+    /**
+     * Use to reload config when needed.
+     */
     public void reloadConfig() {        
         //plugin.reloadConfig();
     	//fileConfiguration = YamlConfiguration.loadConfiguration(configFile);
@@ -60,7 +69,7 @@ public class ConfigAccessor{
     }
     
     /**
-     * 
+     * return configuration.
      * @return FileConfiguration
      */
     public FileConfiguration getConfig() {
@@ -70,6 +79,9 @@ public class ConfigAccessor{
         return fileConfiguration;
     }
     
+    /**
+     * Save changes
+     */
     public void saveConfig() {
         if (fileConfiguration != null && configFile != null) {
             try {
@@ -80,10 +92,13 @@ public class ConfigAccessor{
         }
     }
     
+    /**
+     * Copy the default config from plugin packet.
+     */
     public void saveDefaultConfig() {
         if (!configFile.exists()) {            
             this.plugin.saveResource(fileName, false);
         }
     }
- 
+    
 }

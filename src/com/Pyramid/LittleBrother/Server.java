@@ -2,7 +2,13 @@ package com.Pyramid.LittleBrother;
 
 import java.util.logging.Logger;
 
+/**
+ * The Server class.
+ * 
+ * @see ServerThread
+ */
 public class Server {
+	/** @var Logger */
 	private Logger logger;
 	private int port;
 	private String motd;

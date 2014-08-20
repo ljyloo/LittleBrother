@@ -1,5 +1,8 @@
 package com.Pyramid.LittleBrother;
 
+/**
+ * Pocket item class.
+ */
 public class Item {
 	public short id;
 	public short meta = 0;
@@ -14,7 +17,7 @@ public class Item {
 	}
 	
 	/**
-	 * 
+	 * Translate Pocket item into Bukkit item.
 	 * @param id
 	 * @param meta
 	 * @param count
@@ -25,7 +28,7 @@ public class Item {
 	}
 	
 	/**
-	 * 
+	 * Return the id of this item.
 	 * @return short
 	 */
 	public short getID(){
@@ -33,7 +36,7 @@ public class Item {
 	}
 	
 	/**
-	 * 
+	 * Return damage.
 	 * @return short
 	 */
 	public short getDamage(){
@@ -41,7 +44,7 @@ public class Item {
 	}
 	
 	/**
-	 * 
+	 * Return count.
 	 * @return byte
 	 */
 	public byte getCount(){
