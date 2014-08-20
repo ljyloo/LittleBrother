@@ -10,10 +10,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class LittleBrother extends JavaPlugin{
 	private ServerThread thread;
 	public ConfigAccessor config;
-	public Messages msgs;
+	public Language msgs;
 	public ConfigAccessor Msg;
 	public String Motd;
 	public int port;
+	private Language lang;
 	
 	//public void onload(){
 	//	saveDefaultConfig();
@@ -29,20 +30,16 @@ public class LittleBrother extends JavaPlugin{
 		//	new File(getDataFolder(), "config.yml");
 		//}
 		saveDefaultConfig();
-		Msg = new ConfigAccessor(this,"msg.yml");
-		//Msg.getConfig().options().header("This is Messages.");
-		Msg.saveDefaultConfig();
-		//this.Msg.saveConfig();;
-		this.config = new ConfigAccessor(this,"config.yml");
-		//this.Msg.saveDefaultConfig();
-		Messages msgs = new Messages(this);
-		getLogger().info(Messages.msgLoadTip);
+		lang = new Language(this);
+		lang.loadmsg();//load message.
+		
+		getLogger().info(Language.msgLoadTip);
 		this.thread = new ServerThread(this, getLogger());
-		getLogger().info(Messages.msgOnabledTip);
+		getLogger().info(Language.msgOnabledTip);
 		Motd = this.config.getConfig().getString("motd");
 		port = this.config.getConfig().getInt("port"); 
-		getLogger().info(Messages.msgServerMotd + Motd);
-		getLogger().info(Messages.msgServerPort + port);
+		getLogger().info(Language.msgServerMotd + Motd);
+		getLogger().info(Language.msgServerPort + port);
 		this.getCommand("LittleBrother").setExecutor(new LBCommands(this));
 	}
 	
@@ -50,7 +47,7 @@ public class LittleBrother extends JavaPlugin{
 	 * Call when disable.
 	 */
     public void onDisable() {
-        	getLogger().info(Messages.msgOndisable);
+        	getLogger().info(Language.msgOndisable);
     	}
 	
 	/*public FileConfiguration load(File file){

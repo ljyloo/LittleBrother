@@ -12,7 +12,7 @@ public class LBCommands implements CommandExecutor {
 	private String Motd;
 	private int port;
 	public ConfigAccessor config;
-	public Messages msgs;
+	public Language msgs;
 	
 	public LBCommands(LittleBrother plugin) {
 		this.plugin = plugin; // Store the plugin in situations where you need it.
@@ -34,11 +34,11 @@ public class LBCommands implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("LittleBrother")) { 
 			if (args.length == 0){
-				sender.sendMessage(Messages.msgHelpCommand);
+				sender.sendMessage(Language.msgHelpCommand);
 				//sender.sendMessage("§a/LittleBrother version - Shows you the version of the plugin.");
-				sender.sendMessage(Messages.msgHelpVersion);
-				sender.sendMessage(Messages.msgHelpStatus);
-				sender.sendMessage(Messages.msgHelpReload);
+				sender.sendMessage(Language.msgHelpVersion);
+				sender.sendMessage(Language.msgHelpStatus);
+				sender.sendMessage(Language.msgHelpReload);
 				return true;
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("version")) {
 				// version
@@ -49,8 +49,8 @@ public class LBCommands implements CommandExecutor {
 				//port = this.plugin.port;
 				Motd = this.config.getConfig().getString("motd");
 				port = this.config.getConfig().getInt("port"); 
-				sender.sendMessage(Messages.msgServerMotd + Motd);
-				sender.sendMessage(Messages.msgServerPort+ port);
+				sender.sendMessage(Language.msgServerMotd + Motd);
+				sender.sendMessage(Language.msgServerPort+ port);
 				return true;
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("reload")) {
 				sender.sendMessage("§creloading config file....");

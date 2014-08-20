@@ -10,9 +10,14 @@ import java.net.*;
  */
 public class UDPServer {
     /** @var Logger */
-    private Logger logger;
+    @SuppressWarnings("unused")
+	private Logger logger;
+    
     /** @var DatagramSocket */
+    @SuppressWarnings("unused")
     private DatagramSocket socket;
+    
+    @SuppressWarnings("unused")
     private int port;
     
     public UDPServer(Logger logger, int port) {
