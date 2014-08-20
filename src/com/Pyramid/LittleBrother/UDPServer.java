@@ -3,6 +3,11 @@ package com.Pyramid.LittleBrother;
 import java.util.logging.Logger;
 import java.net.*;
 
+/**
+ * Used to connect MinecraftPE
+ * 
+ * @see DatagramSocket
+ */
 public class UDPServer {
     /** @var Logger */
     private Logger logger;

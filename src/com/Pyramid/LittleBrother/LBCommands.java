@@ -4,6 +4,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
+/**
+ * CommandExecutor of LittleBrother.
+ */
 public class LBCommands implements CommandExecutor {
 	private LittleBrother plugin;
 	private String Motd;
@@ -20,7 +23,7 @@ public class LBCommands implements CommandExecutor {
 	}
 	
 	/**
-	 * 
+	 * Command execut method.
 	 * @param CommandSender sender
 	 * @param Command cmd
 	 * @param String label

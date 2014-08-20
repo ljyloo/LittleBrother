@@ -1,5 +1,11 @@
 package com.Pyramid.LittleBrother;
 
+/**
+ * Multi-languages system
+ * 
+ * TODO: Use onther format of language profile (Maybe ini?) and re-write this class. Add getter method (safe) instead of access the instance variables
+(not safe)
+ */
 public class Messages {
 	private LittleBrother plugin;
 	public ConfigAccessor Msg;
@@ -22,7 +28,10 @@ public class Messages {
 		//Motd = this.plugin.Motd;
 		//port = this.plugin.port;
 	}
-
+	
+	/**
+	 * Load message.
+	 */
 	public void loadmsg() {
 		msgLoadTip = this.Msg.getConfig().getString("msgLoadTip", msgLoadTip);
 		msgHelpVersion = this.Msg.getConfig().getString("msgHelpVersion",msgHelpVersion);
@@ -34,7 +43,7 @@ public class Messages {
 		msgServerMotd = this.Msg.getConfig().getString("msgServerMotd",msgServerMotd);
 		msgOndisable = this.Msg.getConfig().getString("msgOndisable",msgOndisable);
 	}
-
+	
 	/*private void savemsg() {
 		
 	}*/
