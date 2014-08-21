@@ -18,6 +18,8 @@ public class Language {
 	/** @var HashMap */
 	private Map<String, String> lang;
 	
+	private String name;
+	
 	//messages
 	static String msgHelpVersion /*= "&a/LittleBrother version - Shows you the version of the plugin."*/;
 	static String msgLoadTip;
@@ -29,10 +31,11 @@ public class Language {
 	static String msgServerPort;
 	static String msgServerMotd;
 	
-	public Language(LittleBrother plugin) {
+	public Language(LittleBrother plugin, String name) {
 		this.plugin = plugin; // Store the plugin in situations where you need it.
 		this.lang = new HashMap<String, String>();
 		lang.clear();
+		this.name = name;
 	}
 	
 	/**
@@ -40,7 +43,7 @@ public class Language {
 	 */
 	public void loadmsg() {
 		try{
-			InputStream stream = this.plugin.getResource("languages/english.lang");
+			InputStream stream = this.plugin.getResource("languages/" + name + ".lang");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 			String buffer = "";
 			int offset = 0;
