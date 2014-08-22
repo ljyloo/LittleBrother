@@ -30,7 +30,7 @@ public class LittleBrother extends JavaPlugin{
 		//	new File(getDataFolder(), "config.yml");
 		//}
 		saveDefaultConfig();
-		lang = new Language(this);
+		lang = new Language(this, "english");
 		lang.loadmsg();//load message.
 		
 		getLogger().info(Language.msgLoadTip);

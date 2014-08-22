@@ -7,9 +7,6 @@ import java.util.logging.Level;
 
 /**
  * Multi-languages system
- * 
- * TODO: Use onther format of language profile (Maybe ini?) and re-write this class. Add getter method (safe) instead of access the instance variables
-(not safe)
  */
 public class Language {
 	/** @var LittleBrother */
@@ -20,6 +17,7 @@ public class Language {
 	
 	private String name;
 	
+	static Map<String, String>staticlang;
 	//messages
 	static String msgHelpVersion /*= "&a/LittleBrother version - Shows you the version of the plugin."*/;
 	static String msgLoadTip;
@@ -39,11 +37,38 @@ public class Language {
 	}
 	
 	/**
+	 * Get lang
+	 * @param key
+	 * @return String|null
+	 */
+	public String get(String key){
+		return lang.get(key);
+	}
+	
+	/**
+	 * Get lang
+	 * @param key
+	 * @return String|null
+	 */
+	public static String find(String key){
+		return staticlang.get(key);
+	}
+	
+	/**
 	 * Load message.
 	 */
+	@SuppressWarnings("null")
 	public void loadmsg() {
 		try{
-			InputStream stream = this.plugin.getResource("languages/" + name + ".lang");
+			InputStream stream = this.plugin.getResource("languages/" + name.toLowerCase() + ".lang");
+			if(stream == null){
+				plugin.getLogger().warning("Loading language: " + name + " error! Trying to load english.");
+				try{
+					stream.close();
+				} catch(IOException exception){}
+				stream = null;
+				stream = this.plugin.getResource("languages/english.lang");
+			}
 			BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 			String buffer = "";
 			int offset = 0;
@@ -56,6 +81,10 @@ public class Language {
 					lang.put(buffer.substring(0, offset - 1), buffer.substring(offset));
 				}
 			}
+			staticlang = lang;
+			try{
+				stream.close();
+			} catch(IOException exception){}
 		} catch(Exception ex){
 			plugin.getLogger().log(Level.WARNING, "Could not load language profile.");
 		}
