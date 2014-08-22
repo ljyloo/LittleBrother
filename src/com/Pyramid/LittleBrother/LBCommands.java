@@ -34,30 +34,30 @@ public class LBCommands implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("LittleBrother")) { 
 			if (args.length == 0){
-				sender.sendMessage(Language.msgHelpCommand);
+				sender.sendMessage(Language.find("help.command"));
 				//sender.sendMessage("§a/LittleBrother version - Shows you the version of the plugin.");
-				sender.sendMessage(Language.msgHelpVersion);
-				sender.sendMessage(Language.msgHelpStatus);
-				sender.sendMessage(Language.msgHelpReload);
+				sender.sendMessage(Language.find("help.version"));
+				sender.sendMessage(Language.find("help.status"));
+				sender.sendMessage(Language.find("help.reload"));
 				return true;
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("version")) {
 				// version
 				sender.sendMessage("§c["+plugin.getDescription().getName() + "-Version] §3" + plugin.getDescription().getVersion());
 				return true;
-			}else if ((args.length == 1) && args[0].equalsIgnoreCase("status")) {
+			} else if ((args.length == 1) && args[0].equalsIgnoreCase("status")) {
 				//Motd = this.plugin.Motd;
 				//port = this.plugin.port;
 				Motd = this.config.getConfig().getString("motd");
 				port = this.config.getConfig().getInt("port"); 
-				sender.sendMessage(Language.msgServerMotd + Motd);
-				sender.sendMessage(Language.msgServerPort+ port);
+				sender.sendMessage(Language.find("status.motd") + " " + Motd);
+				sender.sendMessage(Language.find("status.port") + " " + port);
 				return true;
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("reload")) {
-				sender.sendMessage("§creloading config file....");
+				sender.sendMessage(Language.find("plugin.config.reload.process"));
 				this.plugin.reloadConfig();
 				this.plugin.Msg.reloadConfig();
 				//plugin.reloadConfig();
-				sender.sendMessage("§cReload config file is complete！");
+				sender.sendMessage("plugin.config.reload.done");
 				return true;
 			}
 		}

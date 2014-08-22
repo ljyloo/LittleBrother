@@ -8,12 +8,17 @@ import org.bukkit.plugin.java.JavaPlugin;
  * @see JavaPlugin
  */
 public class LittleBrother extends JavaPlugin{
+	/** @var ServerThread */
 	private ServerThread thread;
+	
+	/** @var ConfigAccessor */
 	public ConfigAccessor config;
-	public Language msgs;
-	public ConfigAccessor Msg;
+	
 	public String Motd;
+	
 	public int port;
+	
+	/** @var Language */
 	private Language lang;
 	
 	//public void onload(){
@@ -33,22 +38,28 @@ public class LittleBrother extends JavaPlugin{
 		lang = new Language(this, "english");
 		lang.loadmsg();//load message.
 		
-		getLogger().info(Language.msgLoadTip);
+		getLogger().info(lang("server.enable.tip"));
 		this.thread = new ServerThread(this, getLogger());
-		getLogger().info(Language.msgOnabledTip);
 		Motd = this.config.getConfig().getString("motd");
-		port = this.config.getConfig().getInt("port"); 
-		getLogger().info(Language.msgServerMotd + Motd);
-		getLogger().info(Language.msgServerPort + port);
+		port = this.config.getConfig().getInt("port");
 		this.getCommand("LittleBrother").setExecutor(new LBCommands(this));
+	}
+	
+	/**
+	 * Get Language class
+	 * @return String
+	 */
+	public String lang(String key){
+		return lang.get(key);
 	}
 	
 	/**
 	 * Call when disable.
 	 */
     public void onDisable() {
-        	getLogger().info(Language.msgOndisable);
-    	}
+        getLogger().info(lang("server.disable"));
+        thread.onDisable();
+    }
 	
 	/*public FileConfiguration load(File file){
 		if(!file.exists()){
