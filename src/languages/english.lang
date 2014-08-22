@@ -1,0 +1,16 @@
+# LittleBrother language profile
+# Copyright c 2014. Pyramid Team All rights reserved.
+
+# Those message will show when user type help command
+help.version=§a/LittleBrother version - Shows you the version of the plugin.
+help.command=§c---Command alias:/lb ---
+help.status=§a/LittleBrother status - Shows the status of your LittleBrother PocketEdition Server.
+help.reload=§a/LittleBrother reload - Reload config file.
+
+# Those message will show when plugin is restarting|loading
+server.enable.tip=LittleBrother is loading…
+server.disable=Closing Minecraft: PocketEdition interface…
+
+# Those message will show when user want to lookup LittleBrother’s working status
+status.port=§cMCPE Server Port:
+status.motd=§cMCPE Server Motd:
