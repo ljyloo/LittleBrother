@@ -26,4 +26,11 @@ public class ServerThread extends Thread{
 	public void run(){
 		this.server = new Server(this.logger, port, Motd);
 	}
+	
+	/**
+	 * Call when disable.
+	 */
+	public void onDisable(){
+		
+	}
 }

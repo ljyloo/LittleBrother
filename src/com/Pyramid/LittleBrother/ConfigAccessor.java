@@ -29,12 +29,12 @@ public class ConfigAccessor{
      */
     public ConfigAccessor(JavaPlugin plugin, String fileName) {
         if (plugin == null)
-            throw new IllegalArgumentException("plugin cannot be null");
+            throw new IllegalArgumentException("plugin can not be null");
         this.plugin = plugin;
         this.fileName = fileName;
         File dataFolder = plugin.getDataFolder();
         if (dataFolder == null)
-            throw new IllegalStateException();
+            throw new IllegalStateException(plugin.lang("exception.config.init.datafolder"));
         this.configFile = new File(plugin.getDataFolder(), fileName);
     }
     
@@ -87,7 +87,7 @@ public class ConfigAccessor{
             try {
                 getConfig().save(configFile);
             } catch (IOException ex) {
-                plugin.getLogger().log(Level.SEVERE, "Could not save config to " + configFile, ex);
+                plugin.getLogger().log(Level.SEVERE, plugin.lang("exception.config.save") + " " + configFile, ex);
             }
         }
     }

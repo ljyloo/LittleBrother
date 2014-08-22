@@ -7,10 +7,17 @@ help.command=§c---Command alias:/lb ---
 help.status=§a/LittleBrother status - Shows the status of your LittleBrother PocketEdition Server.
 help.reload=§a/LittleBrother reload - Reload config file.
 
-# Those message will show when plugin is restarting|loading
+# Server event, reload etc.
 server.enable.tip=LittleBrother is loading…
 server.disable=Closing Minecraft: PocketEdition interface…
+
+plugin.config.reload.process=§creloading config...
+plugin.config.reload.done=§cConfig reloaded!
 
 # Those message will show when user want to lookup LittleBrother’s working status
 status.port=§cMCPE Server Port:
 status.motd=§cMCPE Server Motd:
+
+# Those message will show when an exception happened
+exception.config.save=Could not save config to
+exception.config.init.datafolder=Data folder cannot be null
