@@ -1,0 +1,23 @@
+# LittleBrother language profile
+# Copyright c 2014. Pyramid Team All rights reserved.
+
+# Those message will show when user type help command
+help.version=§a/LittleBrother version - 显示当前插件版本
+help.command=§c---你也可以使用 /lb 来代替/LittleBrother ---
+help.status=§a/LittleBrother status - 显示当前服务器状态.
+help.reload=§a/LittleBrother reload - 重载设置文件.
+
+# Server event, reload etc.
+server.enable.tip=LittleBrother正在加载…
+server.disable=正在关闭Minecraft : PocketEdition 服务器…
+
+plugin.config.reload.process=§c重载设置文件中...
+plugin.config.reload.done=§c设置文件重载成功!
+
+# Those message will show when user want to lookup LittleBrother’s working status
+status.port=§cMCPE服务器端口:
+status.motd=§cMCPE服务器名称:
+
+# Those message will show when an exception happened
+exception.config.save=无法储存把设置文件储存在
+exception.config.init.datafolder=数据文件夹不能为空
