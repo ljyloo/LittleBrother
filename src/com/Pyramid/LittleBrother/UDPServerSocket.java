@@ -8,19 +8,16 @@ import java.net.*;
  * 
  * @see DatagramSocket
  */
-public class UDPServer {
+public class UDPServerSocket {
     /** @var Logger */
-    @SuppressWarnings("unused")
 	private Logger logger;
     
     /** @var DatagramSocket */
-    @SuppressWarnings("unused")
     private DatagramSocket socket;
     
-    @SuppressWarnings("unused")
     private int port;
     
-    public UDPServer(Logger logger, int port) {
+    public UDPServerSocket(Logger logger, int port) {
         this.logger = logger;
         this.port = port;
         
@@ -30,4 +27,14 @@ public class UDPServer {
 			e.printStackTrace();
 		}
     }
+    
+    public DatagramSocket getSocket(){
+    	return this.socket;
+    }
+    
+    public void close(){
+    	this.socket.close();
+    }
+    
+    
 }

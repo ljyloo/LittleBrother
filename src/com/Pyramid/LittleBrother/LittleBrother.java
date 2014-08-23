@@ -39,7 +39,10 @@ public class LittleBrother extends JavaPlugin{
 		lang.loadmsg();//load message.
 		
 		getLogger().info(lang("server.enable.tip"));
-		this.thread = new ServerThread(this, getLogger());
+		
+		//TODO
+		this.thread = new ServerThread(this, getLogger(), "test", 19132);
+		
 		Motd = this.config.getConfig().getString("motd");
 		port = this.config.getConfig().getInt("port");
 		this.getCommand("LittleBrother").setExecutor(new LBCommands(this));
