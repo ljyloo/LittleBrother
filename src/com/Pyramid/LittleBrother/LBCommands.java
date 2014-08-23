@@ -55,7 +55,7 @@ public class LBCommands implements CommandExecutor {
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("reload")) {
 				sender.sendMessage(Language.find("plugin.config.reload.process"));
 				this.plugin.reloadConfig();
-				this.plugin.Msg.reloadConfig();
+				//this.plugin.Msg.reloadConfig();
 				//plugin.reloadConfig();
 				sender.sendMessage("plugin.config.reload.done");
 				return true;

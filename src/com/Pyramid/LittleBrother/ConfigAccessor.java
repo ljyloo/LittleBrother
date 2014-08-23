@@ -34,7 +34,7 @@ public class ConfigAccessor{
         this.fileName = fileName;
         File dataFolder = plugin.getDataFolder();
         if (dataFolder == null)
-            throw new IllegalStateException(plugin.lang("exception.config.init.datafolder"));
+            //throw new IllegalStateException(plugin.lang("exception.config.init.datafolder"));
         this.configFile = new File(plugin.getDataFolder(), fileName);
     }
     
@@ -87,7 +87,7 @@ public class ConfigAccessor{
             try {
                 getConfig().save(configFile);
             } catch (IOException ex) {
-                plugin.getLogger().log(Level.SEVERE, plugin.lang("exception.config.save") + " " + configFile, ex);
+                //plugin.getLogger().log(Level.SEVERE, plugin.lang("exception.config.save") + " " + configFile, ex);
             }
         }
     }
