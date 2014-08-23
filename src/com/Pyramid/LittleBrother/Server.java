@@ -13,16 +13,17 @@ public class Server {
 	private int port;
 	private String motd;
 	
-	protected UDPServer udp;
+	protected UDPServerSocket socket;
 	
 	public Server(Logger logger, int port, String motd){
 		this.logger = logger;
 		this.port = port;
 		this.motd = motd;
+		this.run();
 	}
 	
 	public void run(){
-		this.udp = new UDPServer(this.logger, this.port);
+		this.socket = new UDPServerSocket(this.logger, this.port);
 	}
 	
 	public String getMotd(){

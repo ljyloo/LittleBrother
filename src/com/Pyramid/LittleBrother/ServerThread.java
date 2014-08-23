@@ -12,19 +12,19 @@ public class ServerThread extends Thread{
 	private LittleBrother plugin;
 	private Logger logger;
 	private Server server;
-	private String Motd;
+	private String motd;
 	private int port;
 	
-	public ServerThread(LittleBrother plugin, Logger logger){
+	public ServerThread(LittleBrother plugin, Logger logger, String motd, int port){
 		this.plugin = plugin;
 		this.logger = logger;
-		Motd = plugin.Motd;
-		port = plugin.port;
+		this.motd = motd;
+		this.port = port;
 		this.start();
 	}
 	
 	public void run(){
-		this.server = new Server(this.logger, port, Motd);
+		this.server = new Server(this.logger, this.port, this.motd);
 	}
 	
 	/**
