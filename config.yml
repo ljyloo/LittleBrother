@@ -1,2 +1,4 @@
-port: 19132
-motd: MCPE Server By LittleBrother
+Server:
+  motd: "Minecraft: Pocket Edition server by LittleBrother"
+  port: 19132
+  thread: 3

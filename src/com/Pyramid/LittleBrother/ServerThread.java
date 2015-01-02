@@ -9,28 +9,26 @@ import java.util.logging.Logger;
  * @see Thread
  */
 public class ServerThread extends Thread{
-	private LittleBrother plugin;
-	private Logger logger;
 	private Server server;
-	private String motd;
-	private int port;
 	
-	public ServerThread(LittleBrother plugin, Logger logger, String motd, int port){
-		this.plugin = plugin;
-		this.logger = logger;
-		this.motd = motd;
-		this.port = port;
+	public ServerThread(Server server){
+		this.server = server;
 		this.start();
 	}
-	
+
+	@Override
 	public void run(){
-		this.server = new Server(this.logger, this.port, this.motd);
+
 	}
 	
 	/**
 	 * Call when disable.
 	 */
-	public void onDisable(){
+	public void onServerClose(){
 		
+	}
+
+	private synchronized Server getServer(){
+		return this.server;
 	}
 }
