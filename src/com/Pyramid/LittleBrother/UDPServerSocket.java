@@ -1,6 +1,6 @@
 package com.Pyramid.LittleBrother;
 
-import java.util.logging.Logger;
+import java.io.IOException;
 import java.net.*;
 
 /**
@@ -9,32 +9,64 @@ import java.net.*;
  * @see DatagramSocket
  */
 public class UDPServerSocket {
-    /** @var Logger */
-	private Logger logger;
-    
-    /** @var DatagramSocket */
-    private DatagramSocket socket;
+    private DatagramSocket socket = null;
+    private Server server;
     
     private int port;
     
-    public UDPServerSocket(Logger logger, int port) {
-        this.logger = logger;
-        this.port = port;
-        
+    public UDPServerSocket(Server server) {
+        this.server = server;
+    }
+
+    public synchronized boolean createSocket(int port){
         try {
-			this.socket = new DatagramSocket(port);
-		} catch (SocketException e) {
-			e.printStackTrace();
-		}
+            this.socket = new DatagramSocket(port);
+            return true;
+        } catch (SocketException e){
+            return false;
+        }
+    }
+
+    public synchronized boolean writePacket(byte[] data, SocketAddress target){
+        if (this.isValid()) {
+            DatagramPacket packet = new DatagramPacket(data, data.length, target);
+            try {
+                this.getInternalSocket().send(packet);
+                return true;
+            } catch (IOException e) {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    public synchronized DatagramPacket readPacket(){
+        if(this.isValid()) {
+            DatagramPacket packet = new DatagramPacket(new byte[65535], 65535);
+            try {
+                this.getInternalSocket().receive(packet);
+                return packet;
+            } catch (IOException e){
+                return null;
+            }
+        }
+        return null;
+    }
+
+    public synchronized boolean isValid(){
+        return this.getServer().isRunning() && this.getInternalSocket() != null && this.getInternalSocket().isBound();
+    }
+
+    public synchronized void closeSocket() {
+        this.socket.close();
     }
     
-    public DatagramSocket getSocket(){
+    public synchronized DatagramSocket getInternalSocket(){
     	return this.socket;
     }
-    
-    public void close(){
-    	this.socket.close();
+
+    private synchronized Server getServer(){
+        return this.server;
     }
-    
     
 }
