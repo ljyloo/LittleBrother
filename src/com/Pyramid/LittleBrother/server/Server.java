@@ -1,4 +1,6 @@
-package com.Pyramid.LittleBrother;
+package com.Pyramid.LittleBrother.server;
+
+import com.Pyramid.LittleBrother.LittleBrother;
 
 /**
  * The Server class.

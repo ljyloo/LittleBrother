@@ -21,16 +21,7 @@ public class LBCommands implements CommandExecutor {
 		//Motd = this.plugin.Motd;
 		//port = this.plugin.port;
 	}
-	
-	/**
-	 * Command execut method.
-	 * @param CommandSender sender
-	 * @param Command cmd
-	 * @param String label
-	 * @param String[] args
-	 * 
-	 * @return boolean
-	 */
+
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("LittleBrother")) { 
 			if (args.length == 0){
