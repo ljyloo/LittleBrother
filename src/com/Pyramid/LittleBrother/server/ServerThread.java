@@ -1,6 +1,4 @@
-package com.Pyramid.LittleBrother;
-
-import java.util.logging.Logger;
+package com.Pyramid.LittleBrother.server;
 
 /**
  * This thread will run background.

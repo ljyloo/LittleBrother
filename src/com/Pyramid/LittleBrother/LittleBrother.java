@@ -1,5 +1,6 @@
 package com.Pyramid.LittleBrother;
 
+import com.Pyramid.LittleBrother.server.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**

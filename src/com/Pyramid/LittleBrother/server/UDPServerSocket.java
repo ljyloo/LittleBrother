@@ -1,4 +1,4 @@
-package com.Pyramid.LittleBrother;
+package com.Pyramid.LittleBrother.server;
 
 import java.io.IOException;
 import java.net.*;
