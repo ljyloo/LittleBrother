@@ -1,12 +1,11 @@
-LittleBrother
-младший брат
+LittleBrother Плагин
 
->один игрок может позволить Minecraft: PocketEdition CraftBukkit сервер в ведро, и игроки общей игры плагин и Minecraft
+>Позволяет играть с Minecraft: Pocket Edition на CraftBukkit сервере!
 
-###использование и устранение неполадок### 
+###Есть проблемы?### 
 Пожалуйста, проверьте  LittleBrother  Wiki. 
 
-###плагин инструкции###
+###Доступные команды###
 
 `/LittleBrother`
 
