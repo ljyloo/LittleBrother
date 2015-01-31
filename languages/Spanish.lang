@@ -1,0 +1,23 @@
+# LittleBrother language profile
+# Copyright c 2014. Pyramid Team All rights reserved.
+
+# Estos mensages se mostrarán cuando el usuario ejecute el comando de ayuda
+help.version=§a/LittleBrother version - Muestra la versión del plugin.
+help.command=§c---Alias del comando:/lb ---
+help.status=§a/LittleBrother status - Muestra el status del servidor LittleBrother PocketEdition.
+help.reload=§a/LittleBrother reload - Vuelve a cargar la configuración.
+
+# Eventos del servidor, recargas, etc.
+server.enable.tip=Cargando LittleBrother…
+server.disable=Cerrando la interfaz de Minecraft: PocketEdition...
+
+plugin.config.reload.process=§cRecargando la configuración...
+plugin.config.reload.done=§c¡Configuración recargada!
+
+# Estos mensages se mostrarán cuando el usuario cheque el estatus actual de LittleBrother
+status.port=§cPuerto del Servidor de MCPE:
+status.motd=§cMotd del Servidor de MCPE:
+
+# Estos mensajes apareceran cuando haya una excepción
+exception.config.save=No se ha podido guardar la configuración a
+exception.config.init.datafolder=La carpeta de Datos no puede estar vacía
