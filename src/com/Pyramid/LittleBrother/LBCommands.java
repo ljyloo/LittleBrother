@@ -3,6 +3,7 @@ package com.Pyramid.LittleBrother;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 
 /**
  * CommandExecutor of LittleBrother.
@@ -11,12 +12,14 @@ public class LBCommands implements CommandExecutor {
 	private LittleBrother plugin;
 	private String Motd;
 	private int port;
-	public ConfigAccessor config;
+//	public ConfigAccessor config;
+	public FileConfiguration config;
 	public Language msgs;
 	
 	public LBCommands(LittleBrother plugin) {
 		this.plugin = plugin; // Store the plugin in situations where you need it.
-		this.config = this.plugin.config;
+//		this.config = this.plugin.config;
+		this.config = this.plugin.getConfig();
 		//this.msgs = this.plugin.msgs;
 		//Motd = this.plugin.Motd;
 		//port = this.plugin.port;
@@ -38,8 +41,10 @@ public class LBCommands implements CommandExecutor {
 			} else if ((args.length == 1) && args[0].equalsIgnoreCase("status")) {
 				//Motd = this.plugin.Motd;
 				//port = this.plugin.port;
-				Motd = this.config.getConfig().getString("motd");
-				port = this.config.getConfig().getInt("port"); 
+//				Motd = this.config.getConfig().getString("motd");
+//				port = this.config.getConfig().getInt("port");
+				Motd = this.config.getString("motd");
+				port = this.config.getInt("port");
 				sender.sendMessage(Language.find("status.motd") + " " + Motd);
 				sender.sendMessage(Language.find("status.port") + " " + port);
 				return true;
