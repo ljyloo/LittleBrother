@@ -5,7 +5,7 @@ interface Info {
 	/**
 	 * Actual Minecraft: PE protocol version；
 	 */
-	int CURRENT_PROTOCOL = 20;
+	int CURRENT_PROTOCOL = 313;
 
 
 	byte LOGIN_PACKET = (byte) 0x82;
